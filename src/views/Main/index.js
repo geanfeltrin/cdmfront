@@ -1,14 +1,25 @@
 import React, { Component } from "react";
-// import Footer from "../../components/footer";
+import Footer from "../../components/footer";
 import Header from "../../components/header";
-import { Container } from "./styles";
+import Search from "../../components/search";
+import SideBar from "../../components/sidebar";
+import { Container, Wrapper, Content } from "./styles";
 
 export default class Main extends Component {
   render() {
     return (
-      <Container>
+      <Wrapper>
         <Header />
-      </Container>
+
+        <Container>
+          <Search />
+          <Content>
+            <SideBar />
+            <h1>Heloo WOrd</h1>
+          </Content>
+        </Container>
+        <Footer />
+      </Wrapper>
     );
   }
 }

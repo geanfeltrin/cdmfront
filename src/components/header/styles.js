@@ -3,33 +3,86 @@ import styled from "styled-components";
 export const Container = styled.header`
   background-color: #2a2a2a;
 
-  height: 140px;
+  max-height: 200px;
   display: flex;
   flex-direction: column;
   flex: 1;
+  justify-content: space-between;
 `;
-
-export const IMG = styled.div`
+export const Content = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin: 10px 10px 0px 10px;
   img {
     width: 200px;
-    height: 135px;
-    margin: 10px;
+  }
+`;
+export const User = styled.div`
+  max-height: 30px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  img {
+    width: 30px;
+    height: 20px;
+    margin: 10px 10px 0 10px;
+
+    border-radius: 50%;
   }
 `;
 
-export const Nav = styled.div`
+// export const LogoRese = styled.img`
+//   display: flex;
+//   justify-content: flex-end;
+//   width: 200px !important;
+//   margin-left: 800px;
+// `;
+
+export const Nav = styled.nav`
   display: flex;
-  justify-content: space-around;
-  justify-items: flex-end;
-  align-items: center;
+  flex-direction: row;
+  margin: 5px 0px 0px 0px;
   color: #fff;
 
-  ul {
-    list-style-type: none;
+  a {
     display: flex;
-    flex-direction: row;
+    color: #fff;
+    margin: 5px;
+    padding-right: 55px;
+    padding-left: 40px;
+    text-decoration: none;
+
+    &:hover {
+      color: #000f;
+    }
   }
-  li {
-    margin: 10px;
+`;
+
+export const SubNav = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  margin: 5px 0px 0px 0px;
+  color: #fff;
+  background-color: #3c8d9f;
+
+  a {
+    display: flex;
+
+    color: #afd2db;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding-right: 55px;
+    padding-left: 40px;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
   }
 `;
