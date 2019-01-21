@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.aside`
   display: flex;
   height: 100%;
-  width: 300px;
+  width: 200px;
   border-width: 1px;
   margin-left: 50px;
 
@@ -12,9 +12,9 @@ export const Container = styled.aside`
   align-items: flex-start;
 
   h1 {
-    font-size: 25px;
+    font-size: 20px;
     color: #000;
-    margin: 5px;
+    margin: 5px 0px;
   }
   div {
     display: flex;
@@ -26,14 +26,14 @@ export const Container = styled.aside`
     margin-bottom: 15px;
 
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
   }
   ul {
     display: flex;
     text-decoration: none;
     flex-direction: column;
     overflow-y: scroll;
-    width: 250px;
+    width: 150px;
     height: 200px;
     margin: 15px;
   }
@@ -55,15 +55,15 @@ export const Tags = styled.div`
   input {
     color: #000;
     margin-right: 10px;
-    font-size: 15px;
+    font-size: 13px;
     display: flex;
   }
 
   label {
     color: #000;
-    font-size: 15px;
+    font-size: 13px;
 
-    margin-bottom: 5px;
+    margin: 5px;
     display: flex;
   }
   strong {

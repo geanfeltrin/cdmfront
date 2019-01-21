@@ -6,6 +6,7 @@ export const Container = styled.header`
   max-height: 200px;
   display: flex;
   flex-direction: column;
+
   flex: 1;
   justify-content: space-between;
 `;
@@ -13,6 +14,7 @@ export const Content = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
+  padding: 0px 50px;
   margin: 10px 10px 0px 10px;
   img {
     width: 200px;
@@ -45,6 +47,7 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   margin: 5px 0px 0px 0px;
+  padding: 0px 50px;
   color: #fff;
 
   a {
@@ -52,7 +55,7 @@ export const Nav = styled.nav`
     color: #fff;
     margin: 5px;
     padding-right: 55px;
-    padding-left: 40px;
+    padding-left: 0px;
     text-decoration: none;
 
     &:hover {
@@ -64,7 +67,7 @@ export const Nav = styled.nav`
 export const SubNav = styled.nav`
   display: flex;
   flex-direction: row;
-
+  padding: 0px 50px;
   margin: 5px 0px 0px 0px;
   color: #fff;
   background-color: #3c8d9f;
@@ -76,7 +79,7 @@ export const SubNav = styled.nav`
     margin: 5px;
     margin-bottom: 10px;
     padding-right: 55px;
-    padding-left: 40px;
+    padding-left: 0px;
     text-decoration: none;
 
     &:hover {

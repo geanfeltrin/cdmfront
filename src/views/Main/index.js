@@ -10,15 +10,15 @@ export default class Main extends Component {
   render() {
     return (
       <Wrapper>
-        <Header />
         <Container>
+          <Header />
           <Search />
           <Content>
             <SideBar />
             <Cards />
           </Content>
+          <Footer />
         </Container>
-        <Footer />
       </Wrapper>
     );
   }
