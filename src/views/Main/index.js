@@ -3,6 +3,7 @@ import Footer from "../../components/footer";
 import Header from "../../components/header";
 import Search from "../../components/search";
 import SideBar from "../../components/sidebar";
+import Cards from "../../components/cards";
 import { Container, Wrapper, Content } from "./styles";
 
 export default class Main extends Component {
@@ -10,12 +11,11 @@ export default class Main extends Component {
     return (
       <Wrapper>
         <Header />
-
         <Container>
           <Search />
           <Content>
             <SideBar />
-            <h1>Heloo WOrd</h1>
+            <Cards />
           </Content>
         </Container>
         <Footer />

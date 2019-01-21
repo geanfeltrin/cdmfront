@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import { Container, Nav, Content, User, SubNav, LogoRese } from "./styles";
+import { Container, Nav, Content, User, SubNav } from "./styles";
 import logo from "../../assets/Ativo1.png";
-import logoResidencia from "../../assets/Logo_Residencia.png";
+
 import user from "../../assets/userlogin.png";
 
 export default class Header extends Component {

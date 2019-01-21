@@ -63,10 +63,8 @@ export const Nav = styled.nav`
 
 export const SubNav = styled.nav`
   display: flex;
-  flex: 1;
   flex-direction: row;
-  flex-wrap: wrap;
-  flex-shrink: 1;
+
   margin: 5px 0px 0px 0px;
   color: #fff;
   background-color: #3c8d9f;
