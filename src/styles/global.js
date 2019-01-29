@@ -15,7 +15,7 @@ body{
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #fff;
+    background: #F3F5F6;
     font-family: "Lato", sans-serif;
 }
 small{

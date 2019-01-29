@@ -1,27 +1,47 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  background-color: #2a2a2a;
-
-  max-height: 200px;
-  display: flex;
-  flex-direction: column;
-
-  flex: 1;
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
   justify-content: space-between;
 `;
+
 export const Content = styled.div`
   display: flex;
   flex: 1;
-  justify-content: space-between;
-  padding: 0px 50px;
-  margin: 10px 10px 0px 10px;
+  justify-content: initial;
+  align-items: center;
+  width: 100%;
   img {
-    width: 200px;
+  margin-left: 100px;
+  margin-top: 10px; 
   }
+  nav {
+    justify-items: center;
+    display:flex;
+    align-content: center;
+    margin: auto;
+    
+    a {
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 14px;
+      margin-right: 15px;
+      padding: 15px;
+      color: #646464;
+      text-decoration: none;
+
+      &:hover {
+        color: #000f;
+        font-weight: bold;
+      }
+    }
 `;
 export const User = styled.div`
-  max-height: 30px;
+  min-height: 30px;
   color: #fff;
   justify-content: center;
   align-items: center;
@@ -31,8 +51,9 @@ export const User = styled.div`
     width: 30px;
     height: 20px;
     margin: 10px 10px 0 10px;
-
     border-radius: 50%;
+  }
+
   }
 `;
 
@@ -46,17 +67,15 @@ export const User = styled.div`
 export const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-  margin: 5px 0px 0px 0px;
-  padding: 0px 50px;
-  color: #fff;
+
+  color: #646464;
 
   a {
-    display: flex;
-    color: #fff;
-    margin: 5px;
-    padding-right: 55px;
-    padding-left: 0px;
-    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #646464;
 
     &:hover {
       color: #000f;
@@ -67,6 +86,7 @@ export const Nav = styled.nav`
 export const SubNav = styled.nav`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   padding: 0px 50px;
   margin: 5px 0px 0px 0px;
   color: #fff;
