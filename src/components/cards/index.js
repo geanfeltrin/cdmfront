@@ -1,209 +1,190 @@
 import React from "react";
 
-import { Container, Content, Card } from "./styles";
+import { Container, Content } from "./styles";
+import {
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardGroup,
+  CardSubtitle,
+  CardBody,
+  Row,
+  Col
+} from "reactstrap";
 
 import imagem from "../../assets/01.jpg";
 
 const Cards = () => (
   <Container>
-    <h1>Rede Social</h1>
-    <Content>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>{" "}
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-      <Card>
-        <img src={imagem} atl="imagem" />
-        <h2>Técnico em enfermagem</h2>
-        <small>Descrição</small>
-        <div>
-          <ul>
-            <li>Tags</li>
-            <li>Tags</li>
-            <li>Tags</li>
-          </ul>
-          <a href="#">Download</a>
-        </div>
-      </Card>
-    </Content>
+    <Row>
+      <Col sm={10}>
+        <h1>Divulgação</h1>
+      </Col>
+      <Col sm={2}>
+        <strong>Rede Sociais</strong>
+      </Col>
+    </Row>
+
+    <Row className="justify-content-md-left">
+      <Col sm="3">
+        <Card>
+          <CardImg top width="100%" src={imagem} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Baixar</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg top width="100%" src={imagem} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Baixar</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg top width="100%" src={imagem} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Baixar</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+      <Col sm="3">
+        <Card>
+          <CardImg
+            top
+            width="100%"
+            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+            alt="Card image cap"
+          />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </CardText>
+            <Button className="float-right">Button</Button>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
   </Container>
 );
 

@@ -1,27 +1,25 @@
 import React, { Component } from "react";
 
-import { Container, Tags } from "./styles";
+import { Container, Tags, Test } from "./styles";
+
+import Checkbox from "../checkbox";
 
 export default class SideBar extends Component {
   render() {
     return (
       <Container>
-        <h1>Refinar sua pesquisa</h1>
         <div>
-          <strong>Categoria > Rede Social</strong>
+          <strong>Categorias</strong>
           <ul>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
-            <li>Banner</li>
+            <li>
+              <a href="/">Marcas</a>
+            </li>
+            <li>
+              <a href="/">Campanhas</a>
+            </li>
+            <li>
+              <a href="/">Rede Sociais</a>
+            </li>
           </ul>
         </div>
 

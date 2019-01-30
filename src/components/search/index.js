@@ -7,7 +7,9 @@ export default class Search extends Component {
     return (
       <Container>
         <input type="text" placeholder="Faça aqui sua pesquisa" />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">
+          <span>Pesquisar</span>
+        </button>
       </Container>
     );
   }

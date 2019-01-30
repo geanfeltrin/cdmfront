@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-import { Container, Content } from "./styles";
+import barrafooter from "../../assets/barrafooter.png";
+import logoresidencia from "../../assets/logoresidencia.png";
+
+import { Container, Content, logo } from "./styles";
 
 export default class Footer extends Component {
   render() {
@@ -18,10 +21,14 @@ export default class Footer extends Component {
           </div>
           <div>
             <span>Email</span>
-            <small>hduahduudhasu@dhausdhasudhas.com</small>
-            <small>hduahduudhasu@dhausdhasudhas.com</small>
+            <small>contato@residenciaeducacao.com.br</small>
+            <small>implantação@residenciaeducacao.com.br</small>
+          </div>
+          <div className="logo">
+            <img src={logoresidencia} alt="Logo Residência" />
           </div>
         </Content>
+        <img src={barrafooter} alt="Barra Footer" />
       </Container>
     );
   }
