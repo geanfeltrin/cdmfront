@@ -8475,6 +8475,14 @@ redux@^3.7.1:
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
 
+reduxsauce@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/reduxsauce/-/reduxsauce-1.0.1.tgz#015114b433963ea938f9768767736815a44e5474"
+  integrity sha512-Vd9z0LAmOicVFTdmjEu82XhNfrg0Z8C6yVI0rKold5uS63kPyYiGVrYMsflbVO232zBy/Y3FWcC+FZVk9wBkwA==
+  dependencies:
+    ramda "^0.24.1"
+    ramdasauce "^2.0.0"
+
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-7.0.0.tgz#107405afcc4a190ec5ed450ecaa00ed0cafa7a4c"
@@ -8876,6 +8884,11 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+seamless-immutable@^7.1.4:
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/seamless-immutable/-/seamless-immutable-7.1.4.tgz#6e9536def083ddc4dea0207d722e0e80d0f372f8"
+  integrity sha512-XiUO1QP4ki4E2PHegiGAlu6r82o5A+6tRh7IkGGTVg/h+UoeX4nFBeCGPOhb4CYjvkqsfm/TUtvOMYC1xmV30A==
 
 select-hose@^2.0.0:
   version "2.0.0"

@@ -25,7 +25,7 @@ export default class Header extends Component {
     return (
       <Container>
         <Content>
-          <img src={cdmlogo} />
+          <img src={cdmlogo} alt="Logo" />
           <NavBar />
           <User />
         </Content>

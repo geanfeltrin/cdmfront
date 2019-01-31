@@ -78,12 +78,9 @@ export const Form = styled.form`
   margin: 30px;
   padding: 30px;
   display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 600px;
-  
-  background-color: #fff;
-  
+  flex-direction: column;  
+  height: 600px;  
+  background-color: #fff;  
   
   -webkit-box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.20);
   -moz-box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.20);
@@ -169,5 +166,10 @@ export const Form = styled.form`
     color: #a2a2a2;
     text-align: center;
     margin-bottom: 20px;
+
+    &:hover{
+      text-decoration:none;
+      color: #0000;
+    }
   };  
 `;

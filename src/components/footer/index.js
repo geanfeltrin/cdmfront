@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import barrafooter from "../../assets/barrafooter.png";
 import logoresidencia from "../../assets/logoresidencia.png";
 
-import { Container, Content, logo } from "./styles";
+import { Container, Content } from "./styles";
 
 export default class Footer extends Component {
   render() {

@@ -3,17 +3,14 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
 
-import { Container } from "./styles";
+// import { Container } from "./styles";
 
 export default class nav extends Component {
   constructor(props) {
@@ -46,16 +43,17 @@ export default class nav extends Component {
                   </DropdownItem>
                   <DropdownItem>
                     <a href="https://github.com/reactstrap/reactstrap">
-                      Option 3
+                      Option 2
                     </a>
                   </DropdownItem>
                   <DropdownItem>
                     <a href="https://github.com/reactstrap/reactstrap">
-                      Option 4
+                      Option 3
                     </a>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
+
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav>CAMPANHAS</DropdownToggle>
                 <DropdownMenu>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import { Container, Tags, Test } from "./styles";
-
-import Checkbox from "../checkbox";
+import { Container, Tags } from "./styles";
 
 export default class SideBar extends Component {
   render() {

@@ -1,13 +1,12 @@
 import React from "react";
 
-import { Container, Content } from "./styles";
+import { Container } from "./styles";
 import {
   Card,
   Button,
   CardImg,
   CardTitle,
   CardText,
-  CardGroup,
   CardSubtitle,
   CardBody,
   Row,
@@ -28,7 +27,7 @@ const Cards = () => (
     </Row>
 
     <Row className="justify-content-md-left">
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg top width="100%" src={imagem} alt="Card image cap" />
           <CardBody>
@@ -42,7 +41,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top
@@ -61,7 +60,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top
@@ -80,7 +79,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg top width="100%" src={imagem} alt="Card image cap" />
           <CardBody>
@@ -94,7 +93,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top
@@ -113,7 +112,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top
@@ -132,7 +131,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg top width="100%" src={imagem} alt="Card image cap" />
           <CardBody>
@@ -146,7 +145,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top
@@ -165,7 +164,7 @@ const Cards = () => (
           </CardBody>
         </Card>
       </Col>
-      <Col sm="3">
+      <Col sm="4">
         <Card>
           <CardImg
             top

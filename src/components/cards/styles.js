@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-content: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-right: 60px;
 
   h1 {
     margin-left: 15px;
