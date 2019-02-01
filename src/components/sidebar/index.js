@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { Container, Tags } from "./styles";
 
 export default class SideBar extends Component {
+  static propTypes = {
+    input: PropTypes.bool,
+    label: PropTypes.string
+  };
   render() {
     return (
       <Container>
@@ -20,7 +25,7 @@ export default class SideBar extends Component {
             </li>
           </ul>
         </div>
-
+        {/* 
         <Tags>
           <strong>Tags</strong>
           <div>
@@ -41,7 +46,7 @@ export default class SideBar extends Component {
               Enfermagem
             </label>
           </div>
-        </Tags>
+        </Tags> */}
       </Container>
     );
   }

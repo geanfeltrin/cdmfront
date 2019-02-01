@@ -7,7 +7,8 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing: border-box;
-    outline:0
+    outline:0,
+    
 }
 html,body, #root{
     height:100%;
@@ -22,6 +23,10 @@ body{
 }
 small{
     text-decoration: none !important;
+}
+ul{
+    list-style-type:none !important;
+    list-style: none !important;
 }
 `;
 export default GlobalStyle;

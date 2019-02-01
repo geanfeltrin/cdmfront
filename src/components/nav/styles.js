@@ -1,5 +1,28 @@
 import styled, { css } from "styled-components";
 
-export const Navbar = styled.nav`
+export const Container = styled.div`
   background-color: transparent;
+
+  li {
+    list-style-type: none !important;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+  }
+`;
+export const Submenu = styled.nav`
+  background-color: #3c8d9f;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  a {
+    color: #ffffff;
+  }
 `;

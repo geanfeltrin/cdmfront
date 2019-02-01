@@ -1,18 +1,45 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import CategoryActions from "../../store/ducks/category";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
+  DropdownItem,
   UncontrolledDropdown,
-  DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownToggle
 } from "reactstrap";
 
-// import { Container } from "./styles";
+import { Container } from "./styles";
+class nav extends Component {
+  static propTypes = {
+    getCategoryRequest: PropTypes.func.isRequired,
+    selectCategory: PropTypes.func.isRequired,
+    NavbarToggler: PropTypes.arrayOf({
+      type: PropTypes.string,
+      tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+    }),
+    category: PropTypes.shape({
+      data: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number,
+          name: PropTypes.string
+        })
+      ).isRequired
+    })
+  };
 
-export default class nav extends Component {
+  componentDidMount() {
+    const { getCategoryRequest } = this.props;
+    getCategoryRequest();
+  }
+
   constructor(props) {
     super(props);
 
@@ -26,78 +53,59 @@ export default class nav extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  handleCategorySelect = category => {
+    const { selectCategory } = this.props;
+
+    selectCategory(category);
+  };
   render() {
+    const { category } = this.props;
+
     return (
-      <div>
+      <Container>
         <Navbar color="transparent" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav>MARCAS</DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 1
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 2
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 3
-                    </a>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+            <Nav className="ml-auto" navbar />
 
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav>CAMPANHAS</DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 1
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 3
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 4
-                    </a>
-                  </DropdownItem>
+            {category.data.map(category => (
+              <UncontrolledDropdown nav inNavbar key={Math.random()}>
+                <DropdownToggle key={category.id} nav>
+                  {category.name}
+                </DropdownToggle>
+                <DropdownMenu
+                  key={Math.random()}
+                  className="content"
+                  center="true"
+                >
+                  <div className="item">
+                    {category.subCategories.map(subCategories => (
+                      <DropdownItem
+                        onClick={() => this.handleCategorySelect(subCategories)}
+                        key={subCategories.id}
+                      >
+                        {subCategories.name}
+                      </DropdownItem>
+                    ))}
+                  </div>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav>REDE SOCIAIS</DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 1
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 3
-                    </a>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <a href="https://github.com/reactstrap/reactstrap">
-                      Option 4
-                    </a>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
+            ))}
           </Collapse>
         </Navbar>
-      </div>
+      </Container>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  category: state.category
+});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CategoryActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(nav);
