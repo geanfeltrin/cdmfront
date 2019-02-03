@@ -16,7 +16,7 @@ export default Creators;
 
 export const INITIAL_STATE = Immutable({
   data: [],
-  active: JSON.parse(localStorage.getItem("@cdm:category")) || null
+  active: JSON.parse(localStorage.getItem("@Cdm:category")) || null
 });
 
 /* Reducers */
@@ -24,9 +24,10 @@ export const INITIAL_STATE = Immutable({
 export const getSuccess = (state, { data }) => state.merge({ data });
 
 export const selectCategory = (state, { category }) => {
+  console.log(category);
   localStorage.setItem("@Cdm:category", JSON.stringify(category));
 
-  return state.merge({ category });
+  return state.merge({ active: category });
 };
 
 /* Reducers to types */

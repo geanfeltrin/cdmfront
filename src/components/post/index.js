@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-
 import PostActions from "../../store/ducks/post";
 
 import { Container } from "./styles";
@@ -12,18 +12,20 @@ import {
   CardImg,
   CardTitle,
   CardText,
+  CardSubtitle,
   CardBody,
   Row,
   Col
 } from "reactstrap";
 
-class cards extends Component {
+class post extends Component {
   static propTypes = {
     getPostRequest: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
       name: PropTypes.string
     }).isRequired
   };
+
   componentDidMount() {
     const { getPostRequest, activeCategory } = this.props;
 
@@ -33,8 +35,9 @@ class cards extends Component {
   }
   render() {
     const { activeCategory, post } = this.props;
-    console.log(activeCategory.id);
-    if (!activeCategory) return <h1>Error</h1>;
+    console.log(post);
+    if (!activeCategory) return null;
+
     return (
       <Container>
         <Row>
@@ -42,12 +45,12 @@ class cards extends Component {
             <h1>Divulgação</h1>
           </Col>
           <Col sm={2}>
-            <strong>{activeCategory.name}</strong>
+            <strong>Rede Sociais</strong>
           </Col>
         </Row>
 
-        <Row className="justify-content-md-left">
-          {post.data.map(post => (
+        {post.data.map(post => (
+          <Row className="justify-content-md-left">
             <Col sm="4">
               <Card key={post.id}>
                 <CardImg
@@ -60,18 +63,17 @@ class cards extends Component {
                   <CardTitle>{post.title}</CardTitle>
                   {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                   <CardText>{post.description}</CardText>
-                  <Button className="float-right" href={post.url}>
-                    Baixar
-                  </Button>
+                  <Button className="float-right">{post.url}</Button>
                 </CardBody>
               </Card>
             </Col>
-          ))}
-        </Row>
+          </Row>
+        ))}
       </Container>
     );
   }
 }
+
 const mapStateToProps = state => ({
   activeCategory: state.category.active,
   post: state.post
@@ -83,4 +85,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(cards);
+)(post);

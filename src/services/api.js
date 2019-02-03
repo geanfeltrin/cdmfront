@@ -7,14 +7,14 @@ const api = axios.create({
 
 api.interceptors.request.use(config => {
   const { token } = store.getState().auth;
-  const { active: categories } = store.getState().category;
+  const { active: category } = store.getState().category;
   const headers = { ...config.headers };
 
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
-  if (categories) {
-    headers.CATEGORY = categories.slug;
+  if (category) {
+    headers.CATEGORY = category.slug;
   }
 
   return { ...config, headers };
