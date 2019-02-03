@@ -47,26 +47,30 @@ class cards extends Component {
         </Row>
 
         <Row className="justify-content-md-left">
-          {post.data.map(post => (
-            <Col sm="4">
-              <Card key={post.id}>
-                <CardImg
-                  top
-                  width="100%"
-                  src={post.file.url}
-                  alt={post.title}
-                />
-                <CardBody>
-                  <CardTitle>{post.title}</CardTitle>
-                  {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                  <CardText>{post.description}</CardText>
-                  <Button className="float-right" href={post.url}>
-                    Baixar
-                  </Button>
-                </CardBody>
-              </Card>
-            </Col>
-          ))}
+          {post.data.map(post => {
+            if (post.sub_category_id === `${activeCategory.id}`) {
+              return (
+                <Col key={post.id} sm="4">
+                  <Card key={post.id}>
+                    <CardImg
+                      top
+                      width="100%"
+                      src={post.file.url}
+                      alt={post.title}
+                    />
+                    <CardBody>
+                      <CardTitle>{post.title}</CardTitle>
+                      {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                      <CardText>{post.description}</CardText>
+                      <Button className="float-right" href={post.url}>
+                        Baixar
+                      </Button>
+                    </CardBody>
+                  </Card>
+                </Col>
+              );
+            }
+          })}
         </Row>
       </Container>
     );
