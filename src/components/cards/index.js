@@ -48,7 +48,7 @@ class cards extends Component {
 
         <Row className="justify-content-md-left">
           {post.data.map(post => {
-            if (post.subcategories.id == activeCategory.id) {
+            if (post.subcategories.id === activeCategory.id) {
               return (
                 <Col key={post.id} sm="4">
                   <Card key={post.id}>
