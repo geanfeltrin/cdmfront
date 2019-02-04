@@ -13,7 +13,6 @@ export function* signIn({ email, password }) {
 
     yield put(AuthActions.signInSuccess(response.data.token));
     yield put(push("/"));
-    
   } catch (error) {
     yield put(
       toastrActions.add({
@@ -23,4 +22,9 @@ export function* signIn({ email, password }) {
       })
     );
   }
+}
+
+export function* signOut() {
+  localStorage.removeItem("@cdm:token");
+  yield put(push("/"));
 }

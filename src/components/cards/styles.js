@@ -33,7 +33,7 @@ export const Container = styled.div`
   img {
     height: 180px;
   }
-  button {
+  .bnt-download {
     background: #ff9900;
     border-radius: 5px;
     border: none;

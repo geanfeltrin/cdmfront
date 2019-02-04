@@ -1,29 +1,58 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import CategoryActions from "../../store/ducks/category";
+
 import { Container } from "./styles";
 
-export default class SideBar extends Component {
+class SideBar extends Component {
   static propTypes = {
     input: PropTypes.bool,
-    label: PropTypes.string
+    label: PropTypes.string,
+    selectCategory: PropTypes.func.isRequired,
+    activeCategory: PropTypes.shape({
+      name: PropTypes.string
+    }).isRequired
   };
+
+  handleCategorySelect = category => {
+    const { selectCategory } = this.props;
+
+    selectCategory(category);
+  };
+
   render() {
+    const { activeCategory, category } = this.props;
     return (
       <Container>
         <div>
-          <strong>Categorias</strong>
-          <ul>
-            <li>
-              <a href="/">Marcas</a>
-            </li>
-            <li>
-              <a href="/">Campanhas</a>
-            </li>
-            <li>
-              <a href="/">Rede Sociais</a>
-            </li>
-          </ul>
+          <h1>Categorias</h1>
+          {category.data.map(category =>
+            category.subCategories.map(subCategories => {
+              if (activeCategory.category_id === subCategories.category_id) {
+                return (
+                  <ul key={Math.random()}>
+                    <li key={Math.random()}>
+                      <a
+                        href="/"
+                        key={subCategories.id}
+                        onClick={() =>
+                          this.handleCategorySelect({
+                            categoryName: category.name,
+                            ...subCategories
+                          })
+                        }
+                      >
+                        {subCategories.name}
+                      </a>
+                    </li>
+                  </ul>
+                );
+              }
+            })
+          )}
         </div>
         {/* 
         <Tags>
@@ -51,3 +80,16 @@ export default class SideBar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  activeCategory: state.category.active,
+  category: state.category
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CategoryActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SideBar);

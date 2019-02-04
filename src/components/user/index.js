@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import AuthActions from "../../store/ducks/auth";
+
 import { Container } from "./styles";
 import {
   Dropdown,
@@ -9,7 +16,10 @@ import {
 } from "reactstrap";
 import user from "../../assets/userlogin.png";
 
-export default class User extends Component {
+class User extends Component {
+  static propTypes = {
+    signOut: PropTypes.func.isRequired
+  };
   constructor(props) {
     super(props);
 
@@ -26,6 +36,7 @@ export default class User extends Component {
   }
 
   render() {
+    const { signOut } = this.props;
     return (
       <Container>
         <img src={user} alt="Imagem do Usuário" />
@@ -35,11 +46,11 @@ export default class User extends Component {
               Usuário
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem tag="a" href="/blah">
-                Editar Perfil
+              <DropdownItem tag="a" href="/user">
+                Alterar senha
               </DropdownItem>
-              <DropdownItem tag="a" href="/blah">
-                Logout
+              <DropdownItem href="/" onClick={signOut}>
+                Sair
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
@@ -48,3 +59,13 @@ export default class User extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(AuthActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(User);

@@ -39,7 +39,7 @@ class cards extends Component {
       <Container>
         <Row>
           <Col sm={10}>
-            <h1>Divulgação</h1>
+            <h1>{activeCategory.categoryName}</h1>
           </Col>
           <Col sm={2}>
             <strong>{activeCategory.name}</strong>
@@ -62,7 +62,10 @@ class cards extends Component {
                       <CardTitle>{post.title}</CardTitle>
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                       <CardText>{post.description}</CardText>
-                      <Button className="float-right" href={post.url}>
+                      <Button
+                        className="float-right text-uppercase bnt-download"
+                        href={post.url}
+                      >
                         Baixar
                       </Button>
                     </CardBody>
