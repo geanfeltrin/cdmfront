@@ -39,7 +39,7 @@ class cards extends Component {
       <Container>
         <Row>
           <Col sm={10}>
-            <h1>Divulgação</h1>
+            <h1>{activeCategory.categoryName}</h1>
           </Col>
           <Col sm={2}>
             <strong>{activeCategory.name}</strong>
@@ -48,7 +48,7 @@ class cards extends Component {
 
         <Row className="justify-content-md-left">
           {post.data.map(post => {
-            if (post.subcategories.id == activeCategory.id) {
+            if (post.subcategories.id === activeCategory.id) {
               return (
                 <Col key={post.id} sm="4">
                   <Card key={post.id}>
@@ -62,7 +62,10 @@ class cards extends Component {
                       <CardTitle>{post.title}</CardTitle>
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                       <CardText>{post.description}</CardText>
-                      <Button className="float-right" href={post.url}>
+                      <Button
+                        className="float-right bnt-download"
+                        href={post.url}
+                      >
                         Baixar
                       </Button>
                     </CardBody>

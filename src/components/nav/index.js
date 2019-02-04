@@ -82,7 +82,12 @@ class nav extends Component {
                   <div className="item">
                     {category.subCategories.map(subCategories => (
                       <DropdownItem
-                        onClick={() => this.handleCategorySelect(subCategories)}
+                        onClick={() =>
+                          this.handleCategorySelect({
+                            categoryName: category.name,
+                            ...subCategories
+                          })
+                        }
                         key={subCategories.id}
                       >
                         {subCategories.name}
