@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   width: 100%;
-  height: 70px;
+  max-height: 70px;
   background: #ffffff;
   border: 1px solid #e7e7e7;
-  justify-content: space-between;
 `;
 
 export const Content = styled.div`

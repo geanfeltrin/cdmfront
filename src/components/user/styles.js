@@ -1,4 +1,21 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const sizes = {
+  desktop: 992,
+  tablet: 768,
+  phone: 576
+};
+
+// Iterate through the sizes and create a media template
+const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${sizes[label] / 16}em) {
+      ${css(...args)}
+    }
+  `;
+
+  return acc;
+}, {});
 
 export const Container = styled.div`
   display: flex;
@@ -6,6 +23,9 @@ export const Container = styled.div`
   align-items: center;
   margin: 10px;
   margin-right: 122px;
+
+  ${media.tablet`display:none;`}
+  ${media.phone`display:none;`}  
   img {
     width: 25px;
     height: 25px;

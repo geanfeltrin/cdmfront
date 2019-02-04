@@ -63,7 +63,7 @@ class cards extends Component {
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                       <CardText>{post.description}</CardText>
                       <Button
-                        className="float-right bnt-download"
+                        className="float-right text-uppercase bnt-download"
                         href={post.url}
                       >
                         Baixar

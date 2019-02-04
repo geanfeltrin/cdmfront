@@ -71,7 +71,11 @@ class nav extends Component {
 
             {category.data.map(category => (
               <UncontrolledDropdown nav inNavbar key={Math.random()}>
-                <DropdownToggle key={category.id} nav>
+                <DropdownToggle
+                  className="text-uppercase"
+                  key={category.id}
+                  nav
+                >
                   {category.name}
                 </DropdownToggle>
                 <DropdownMenu
@@ -82,6 +86,7 @@ class nav extends Component {
                   <div className="item">
                     {category.subCategories.map(subCategories => (
                       <DropdownItem
+                        href="/"
                         onClick={() =>
                           this.handleCategorySelect({
                             categoryName: category.name,

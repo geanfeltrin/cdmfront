@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import CategoryActions from "../../store/ducks/post";
+import CategoryActions from "../../store/ducks/category";
 
 import { Container } from "./styles";
 
@@ -11,7 +11,7 @@ class SideBar extends Component {
   static propTypes = {
     input: PropTypes.bool,
     label: PropTypes.string,
-    getPostRequest: PropTypes.func.isRequired,
+    selectCategory: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
       name: PropTypes.string
     }).isRequired
@@ -28,14 +28,15 @@ class SideBar extends Component {
     return (
       <Container>
         <div>
-          <strong>{activeCategory.categoryName}</strong>
+          <h1>Categorias</h1>
           {category.data.map(category =>
             category.subCategories.map(subCategories => {
               if (activeCategory.category_id === subCategories.category_id) {
                 return (
-                  <ul>
-                    <li>
+                  <ul key={Math.random()}>
+                    <li key={Math.random()}>
                       <a
+                        href="/"
                         key={subCategories.id}
                         onClick={() =>
                           this.handleCategorySelect({
