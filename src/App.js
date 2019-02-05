@@ -4,7 +4,6 @@ import ReduxToastr from "react-redux-toastr";
 
 import GlobalStyle from "./styles/global";
 import Routes from "./routes";
-import "./config/reactotron";
 
 import store from "./store";
 

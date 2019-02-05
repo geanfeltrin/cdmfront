@@ -39,8 +39,5 @@ export const Content = styled.div`
         font-weight: bold;
       }
     }
-    ul {
-      line-style: none;
-    }
   }
 `;
