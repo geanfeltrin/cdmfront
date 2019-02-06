@@ -25,14 +25,14 @@ export default class Sidebar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <NavItem>
-              <NavLink href="#">Usuários</NavLink>
+              <NavLink href="users">Usuários</NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink href="#">Categorias</NavLink>
+              <NavLink href="category">Categorias</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Postagem</NavLink>
+              <NavLink href="roles">Postagem</NavLink>
             </NavItem>
           </Collapse>
         </Nav>

@@ -6,11 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 } from "reactstrap";
 import cdmlogo from "../../../assets/cdmlogo.png";
 
@@ -32,10 +28,8 @@ export default class Header extends Component {
     return (
       <div>
         <Navbar color="white" light expand="md">
-          <NavbarBrand href="/">
-            <a href="/">
-              <img src={cdmlogo} alt="Logo" />
-            </a>
+          <NavbarBrand tag="a" href="/">
+            <img src={cdmlogo} alt="Logo" />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

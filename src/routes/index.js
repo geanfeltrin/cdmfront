@@ -7,6 +7,10 @@ import history from "./history";
 import Private from "./private";
 import Guest from "./guest";
 
+// import Users from "../components/Admin/users";
+// import Category from "../components/Admin/category";
+// import Roles from "../components/Admin/roles";
+
 import Main from "../views/Main";
 import SignIn from "../views/SignIn";
 import Perfil from "../views/Perfil";
@@ -17,7 +21,7 @@ const Routes = () => (
     <Switch>
       <Guest path="/signin" component={SignIn} />
       <Private path="/" exact component={Main} />
-      <Private path="/user" component={Perfil} />
+      <Private path="/perfil" component={Perfil} />
       <Private path="/admin" component={Admin} />
     </Switch>
   </ConnectedRouter>
