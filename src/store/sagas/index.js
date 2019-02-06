@@ -3,7 +3,7 @@ import { all, takeLatest } from "redux-saga/effects";
 import { signIn, signOut } from "./auth";
 import { AuthTypes } from "../ducks/auth";
 
-import { getCategory } from "./category";
+import { getCategory, createCategory } from "./category";
 import { CategoryTypes } from "../ducks/category";
 
 import { getPost } from "./post";
@@ -19,6 +19,7 @@ export default function* rootSaga() {
 
     takeLatest(CategoryTypes.GET_CATEGORY_REQUEST, getCategory),
     takeLatest(CategoryTypes.SELECT_CATEGORY, getCategory),
+    takeLatest(CategoryTypes.CREATE_CATEGORY_REQUEST, createCategory),
 
     takeLatest(CategoryTypes.SELECT_CATEGORY, getPost),
     takeLatest(PostTypes.GET_POST_REQUEST, getPost),

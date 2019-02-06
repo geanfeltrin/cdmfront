@@ -6,6 +6,7 @@ import Header from "../../components/Admin/header";
 import { Row, Col } from "reactstrap";
 
 import Users from "../../components/Admin/users";
+import Category from "../../components/Admin/Category";
 
 export default class Dashboard extends Component {
   render() {
@@ -17,7 +18,7 @@ export default class Dashboard extends Component {
             <Sidebar />
           </Col>
           <Col sm={10}>
-            <Users />
+            <Category />
           </Col>
         </Row>
       </Container>

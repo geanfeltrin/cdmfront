@@ -6,7 +6,11 @@ import Immutable from "seamless-immutable";
 const { Types, Creators } = createActions({
   getCategoryRequest: null,
   getCategorySuccess: ["data"],
-  selectCategory: ["category"]
+  selectCategory: ["category"],
+  openCategoryModal: null,
+  closeCategoryModal: null,
+  createCategoryRequest: ["name", "slug"],
+  createCategorySuccess: ["category"]
 });
 
 export const CategoryTypes = Types;
@@ -16,7 +20,8 @@ export default Creators;
 
 export const INITIAL_STATE = Immutable({
   data: [],
-  active: JSON.parse(localStorage.getItem("@Cdm:category")) || null
+  active: JSON.parse(localStorage.getItem("@Cdm:category")) || null,
+  CategoryModalOpen: false
 });
 
 /* Reducers */
@@ -24,15 +29,24 @@ export const INITIAL_STATE = Immutable({
 export const getSuccess = (state, { data }) => state.merge({ data });
 
 export const selectCategory = (state, { category }) => {
-  console.log(category);
   localStorage.setItem("@Cdm:category", JSON.stringify(category));
 
   return state.merge({ active: category });
 };
 
+export const openModal = state => state.merge({ CategoryModalOpen: true });
+
+export const closeModal = state => state.merge({ CategoryModalOpen: false });
+
+export const createSuccess = (state, { category }) =>
+  state.merge({ data: [...state.data, category] });
+
 /* Reducers to types */
 
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.GET_CATEGORY_SUCCESS]: getSuccess,
-  [Types.SELECT_CATEGORY]: selectCategory
+  [Types.SELECT_CATEGORY]: selectCategory,
+  [Types.OPEN_CATEGORY_MODAL]: openModal,
+  [Types.CLOSE_CATEGORY_MODAL]: closeModal,
+  [Types.CREATE_CATEGORY_SUCCESS]: createSuccess
 });

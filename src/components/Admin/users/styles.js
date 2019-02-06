@@ -5,9 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   width: 90%;
 
-  .tb {
-    margin-: 20px;
-  }
   button {
     display: flex;
 

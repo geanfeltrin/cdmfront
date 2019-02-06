@@ -19,9 +19,9 @@ import {
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import Modal from "../Modal";
 import UsersActions from "../../../store/ducks/users";
 
+import Modal from "../Modal";
 class users extends Component {
   static propTypes = {
     // Pass in a Component to override default element
