@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
 
   .tb {
-    margin-top: 20px;
+    margin-: 20px;
   }
   button {
     display: flex;

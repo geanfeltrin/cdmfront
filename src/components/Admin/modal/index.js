@@ -1,25 +1,25 @@
-import React from 'react';
-import { Container } from '../users/styles';
-import PropTypes from 'prop-types'
+import React from "react";
 
-import { Container,Content } from './styles';
+import PropTypes from "prop-types";
 
-const modal = ({Children, size}) => (
-<Container>
-    <Content size={}>{Children}</Content>
-</Container>
-)
+import { Container, Content } from "./styles";
 
-modal.PropTypes ={
-    Children: PropTypes.oneOfType([
-        PropTypes.element,
-        PropTypes.arrayOf(PropTypes.element)
-    ]).isRequired,
-    size: PropTypes.string
-}
+const Modal = ({ children, size }) => (
+  <Container>
+    <Content size={size}>{children}</Content>
+  </Container>
+);
 
-modal.defaultProps = {
-    size: 'default'
-}
+Modal.PropTypes = {
+  Children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element)
+  ]).isRequired,
+  size: PropTypes.string
+};
 
-export default modal;
+Modal.defaultProps = {
+  size: "default"
+};
+
+export default Modal;

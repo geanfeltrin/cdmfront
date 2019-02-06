@@ -50,7 +50,7 @@ class SideBar extends Component {
                     </li>
                   </ul>
                 );
-              }
+              } else return null;
             })
           )}
         </div>
