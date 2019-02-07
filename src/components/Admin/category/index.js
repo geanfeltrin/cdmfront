@@ -19,6 +19,8 @@ import {
   Badge
 } from "reactstrap";
 
+import SubCategory from "../subCategory";
+
 import { Container } from "./styles";
 
 class Category extends Component {
@@ -43,8 +45,12 @@ class Category extends Component {
     closeCategoryModal: PropTypes.func.isRequired
   };
   state = {
-    name: "",
-    slug: ""
+    categoryName: "",
+
+    subCategoryName: "",
+
+    categoryId: [],
+    selectedOption: null
   };
 
   handleInputChange = e => {
@@ -55,18 +61,45 @@ class Category extends Component {
     e.preventDefault();
 
     const { createCategoryRequest } = this.props;
-    const { name, slug } = this.state;
+    const { categoryName } = this.state;
 
-    createCategoryRequest(name, slug);
+    createCategoryRequest(categoryName);
   };
+  handleCreateSubCategory = e => {
+    e.preventDefault();
+
+    const { createSubCategoryRequest } = this.props;
+    const { subCategoryName, categoryId } = this.state;
+
+    createSubCategoryRequest(subCategoryName, categoryId);
+  };
+
+  handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  };
+
   componentDidMount() {
     const { getCategoryRequest } = this.props;
+
     getCategoryRequest();
   }
   render() {
-    const { openCategoryModal, closeCategoryModal, category } = this.props;
+    const {
+      openCategoryModal,
+      closeCategoryModal,
+      category,
+      openModal,
+      closeModal,
+      subCategory
+    } = this.props;
 
-    const { name, slug } = this.state;
+    const {
+      categoryName,
+      subCategoryName,
+      categoryId,
+      selectedOption
+    } = this.state;
 
     return (
       <Container>
@@ -81,27 +114,14 @@ class Category extends Component {
                 <Row form>
                   <Col md={6}>
                     <FormGroup>
-                      <Label for="name">Nome da categoria</Label>
+                      <Label for="categoryName">Nome da categoria</Label>
                       <Input
                         type="text"
-                        name="name"
-                        value={name}
+                        name="categoryName"
+                        value={categoryName}
                         onChange={this.handleInputChange}
-                        id="nameId"
+                        id="categoryNameId"
                         placeholder="Digite o nome da categoria"
-                      />
-                    </FormGroup>
-                  </Col>
-                  <Col md={6}>
-                    <FormGroup>
-                      <Label for="slug">Slug da categoria</Label>
-                      <Input
-                        type="text"
-                        name="slug"
-                        value={slug}
-                        onChange={this.handleInputChange}
-                        id="slugId"
-                        placeholder="Digite o slug da categoria"
                       />
                     </FormGroup>
                   </Col>
@@ -121,6 +141,7 @@ class Category extends Component {
               </Form>
             </Modal>
           )}
+          <SubCategory />
         </Row>
 
         <Table bordered hover size="sm" responsive="md" className="mx-auto">

@@ -9,11 +9,10 @@ export function* getCategory() {
   yield put(CategoryAction.getCategorySuccess(response.data));
 }
 
-export function* createCategory({ name, slug }) {
+export function* createCategory({ name }) {
   try {
     const response = yield call(api.post, "category", {
-      name,
-      slug
+      name
     });
 
     yield put(CategoryAction.createCategorySuccess(response.data));

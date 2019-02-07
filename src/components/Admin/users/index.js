@@ -55,6 +55,12 @@ class users extends Component {
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  handleChange = selectedOption => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  };
+
   handleCreateUser = e => {
     e.preventDefault();
 
@@ -73,10 +79,7 @@ class users extends Component {
 
     getUsersRequest();
   }
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  };
+
   render() {
     const { users, openUsersModal, closeUsersModal } = this.props;
     const { username, email, password, roles, selectedOption } = this.state;

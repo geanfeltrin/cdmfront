@@ -18,13 +18,17 @@ class SideBar extends Component {
   };
 
   handleCategorySelect = category => {
-    const { selectCategory } = this.props;
+    const { selectCategory, activeCategory } = this.props;
 
-    selectCategory(category);
+    if (activeCategory) {
+      selectCategory(category);
+    }
   };
 
   render() {
     const { activeCategory, category } = this.props;
+
+    if (!activeCategory) return <h1>Error</h1>;
     return (
       <Container>
         <div>

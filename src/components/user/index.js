@@ -46,7 +46,7 @@ class User extends Component {
               Usuário
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem tag="a" href="/user">
+              <DropdownItem tag="a" href="/perfil">
                 Alterar senha
               </DropdownItem>
               <DropdownItem href="/" onClick={signOut}>

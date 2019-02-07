@@ -9,7 +9,7 @@ const { Types, Creators } = createActions({
   selectCategory: ["category"],
   openCategoryModal: null,
   closeCategoryModal: null,
-  createCategoryRequest: ["name", "slug"],
+  createCategoryRequest: ["name"],
   createCategorySuccess: ["category"]
 });
 
