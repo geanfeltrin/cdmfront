@@ -136,16 +136,15 @@ class Category extends Component {
               <tr>
                 <th scope="row">{category.id}</th>
                 <td>{category.name}</td>
+
                 <td>
-                  {category.subCategories.map(subCategories => {
-                    if (subCategories) {
-                      return (
-                        <Badge className="m-1" key={subCategories.id}>
-                          {subCategories.name}
-                        </Badge>
-                      );
-                    } else return null;
-                  })}
+                  {category.subCategories &&
+                    category.subCategories.length > 0 &&
+                    category.subCategories.map(subCategories => (
+                      <Badge className="m-1" key={subCategories.id}>
+                        {subCategories.name}
+                      </Badge>
+                    ))}
                 </td>
               </tr>
             </tbody>
