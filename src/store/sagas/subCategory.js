@@ -1,4 +1,5 @@
 import { call, put } from "redux-saga/effects";
+import { push } from "connected-react-router";
 import api from "../../services/api";
 import { actions as toastrActions } from "react-redux-toastr";
 import SubCategoryAction from "../ducks/subCategory";
@@ -18,6 +19,7 @@ export function* createSubCategory({ name, category_id }) {
 
     yield put(SubCategoryAction.createSubCategorySuccess(response.data));
     yield put(SubCategoryAction.closeModal());
+    yield put(push("/admin"));
     console.log("foi");
   } catch (error) {
     yield put(
