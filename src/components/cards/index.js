@@ -34,7 +34,7 @@ class cards extends Component {
   render() {
     const { activeCategory, post } = this.props;
 
-    if (!activeCategory) return <h1>Error</h1>;
+    if (!activeCategory) return <h1 />;
     return (
       <Container>
         <Row>

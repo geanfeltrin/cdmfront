@@ -5,12 +5,13 @@ export const Wrapper = styled.div`
   display: flex;
   flex-grow: 0;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Container = styled.div`
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   margin-top: 60px;
   margin-bottom: 30px;

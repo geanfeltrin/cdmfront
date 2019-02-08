@@ -28,7 +28,7 @@ class SideBar extends Component {
   render() {
     const { activeCategory, category } = this.props;
 
-    if (!activeCategory) return <h1>Error</h1>;
+    if (!activeCategory) return <h1 />;
     return (
       <Container>
         <div>
