@@ -6,7 +6,9 @@ import Immutable from "seamless-immutable";
 const { Types, Creators } = createActions({
   signInRequest: ["email", "password"],
   signInSuccess: ["token"],
-  signOut: null
+  signOut: null,
+  getPermissionRequest: null,
+  getPermissionSuccess: ["permission"]
 });
 
 export const AuthTypes = Types;
@@ -15,6 +17,7 @@ export default Creators;
 /* Initial State */
 
 export const INITIAL_STATE = Immutable({
+  permission: [] || null,
   signedIn: !!localStorage.getItem("@cdm:token"),
   token: localStorage.getItem("@cdm:token") || null
 });
@@ -27,9 +30,15 @@ export const success = (state, { token }) => {
 };
 export const logout = state => state.merge({ signOut: false, token: null });
 
+export const permissionSuccess = (state, { permission }) => {
+  console.log(permission);
+  state.merge({ permission: "permission" });
+};
+
 /* Reducers to types */
 
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.SIGN_IN_SUCCESS]: success,
-  [Types.SIGN_OUT]: logout
+  [Types.SIGN_OUT]: logout,
+  [Types.GET_PERMISSION_SUCCESS]: permissionSuccess
 });

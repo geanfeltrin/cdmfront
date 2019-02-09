@@ -8,10 +8,14 @@ import AuthActions from "../ducks/auth";
 export function* signIn({ email, password }) {
   try {
     const response = yield call(api.post, "sessions", { email, password });
-
+    console.log(response.data);
     localStorage.setItem("@cdm:token", response.data.token);
-
     yield put(AuthActions.signInSuccess(response.data.token));
+
+    /* Permissao */
+
+    /*fim Permissao */
+
     yield put(push("/"));
   } catch (error) {
     yield put(
@@ -27,4 +31,9 @@ export function* signIn({ email, password }) {
 export function* signOut() {
   localStorage.removeItem("@cdm:token");
   yield put(push("/"));
+}
+
+export function* getPermission() {
+  const response = yield call(api.get, "sessions");
+  yield put(AuthActions.getPermissionSuccess(response.data));
 }

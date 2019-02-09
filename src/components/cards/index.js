@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
+import AuthActions from "../../store/ducks/auth";
 
 import { Container } from "./styles";
 import {
@@ -25,11 +26,12 @@ class cards extends Component {
     }).isRequired
   };
   componentDidMount() {
-    const { getPostRequest, activeCategory } = this.props;
+    const { getPostRequest, activeCategory, getPermissionRequest } = this.props;
 
     if (activeCategory) {
       getPostRequest();
     }
+    getPermissionRequest();
   }
   render() {
     const { activeCategory, post } = this.props;
@@ -85,7 +87,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(PostActions, dispatch);
+  bindActionCreators({ ...PostActions, ...AuthActions }, dispatch);
 
 export default connect(
   mapStateToProps,

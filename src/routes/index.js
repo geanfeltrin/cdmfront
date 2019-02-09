@@ -5,6 +5,7 @@ import { Switch } from "react-router-dom";
 import history from "./history";
 
 import Private from "./private";
+import Admin from "./admin";
 import Guest from "./guest";
 
 // import Users from "../components/Admin/users";
@@ -14,7 +15,7 @@ import Guest from "./guest";
 import Main from "../views/Main";
 import SignIn from "../views/SignIn";
 import Perfil from "../views/Perfil";
-import Admin from "../views/Dashboard";
+import Dashboard from "../views/Dashboard";
 
 const Routes = () => (
   <ConnectedRouter history={history}>
@@ -22,7 +23,7 @@ const Routes = () => (
       <Guest path="/signin" component={SignIn} />
       <Private path="/" exact component={Main} />
       <Private path="/perfil" component={Perfil} />
-      <Private path="/admin" component={Admin} />
+      <Admin path="/admin" component={Dashboard} />
     </Switch>
   </ConnectedRouter>
 );
