@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -11,9 +12,29 @@ import Modal from "../Modal";
 // import { Container } from './styles';
 
 class subCategory extends Component {
+  static propTypes = {
+    // Pass in a Component to override default element
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    size: PropTypes.string,
+    bordered: PropTypes.bool,
+    borderless: PropTypes.bool,
+    striped: PropTypes.bool,
+    dark: PropTypes.bool,
+    hover: PropTypes.bool,
+    responsive: PropTypes.bool,
+    // Custom ref handler that will be assigned to the "ref" of the inner <table> element
+    innerRef: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string,
+      PropTypes.object
+    ]),
+    getSubCategoryRequest: PropTypes.func.isRequired,
+    openModal: PropTypes.func.isRequired,
+    closeModal: PropTypes.func.isRequired
+  };
+
   state = {
     name: "",
-
     category: "",
     selectedOption: null
   };

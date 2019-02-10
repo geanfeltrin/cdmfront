@@ -46,9 +46,7 @@ class Category extends Component {
   };
   state = {
     categoryName: "",
-
     subCategoryName: "",
-
     categoryId: [],
     selectedOption: null
   };
@@ -65,19 +63,6 @@ class Category extends Component {
 
     createCategoryRequest(categoryName);
   };
-  handleCreateSubCategory = e => {
-    e.preventDefault();
-
-    const { createSubCategoryRequest } = this.props;
-    const { subCategoryName, categoryId } = this.state;
-
-    createSubCategoryRequest(subCategoryName, categoryId);
-  };
-
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  };
 
   componentDidMount() {
     const { getCategoryRequest } = this.props;
@@ -85,21 +70,9 @@ class Category extends Component {
     getCategoryRequest();
   }
   render() {
-    const {
-      openCategoryModal,
-      closeCategoryModal,
-      category,
-      openModal,
-      closeModal,
-      subCategory
-    } = this.props;
+    const { openCategoryModal, closeCategoryModal, category } = this.props;
 
-    const {
-      categoryName,
-      subCategoryName,
-      categoryId,
-      selectedOption
-    } = this.state;
+    const { categoryName } = this.state;
 
     return (
       <Container>
