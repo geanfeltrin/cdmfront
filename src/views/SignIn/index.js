@@ -31,7 +31,14 @@ class SignIn extends Component {
     const { signInRequest } = this.props;
 
     signInRequest(email, password);
+    this.permisison();
   };
+
+  async permisison() {
+    const { getPermissionRequest } = this.props;
+
+    await getPermissionRequest();
+  }
   render() {
     const { email, password } = this.state;
     return (

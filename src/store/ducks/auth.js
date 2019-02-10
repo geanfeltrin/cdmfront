@@ -17,7 +17,7 @@ export default Creators;
 /* Initial State */
 
 export const INITIAL_STATE = Immutable({
-  permission: [] || null,
+  permission: localStorage.getItem("@cdm:permission") || null,
   signedIn: !!localStorage.getItem("@cdm:token"),
   token: localStorage.getItem("@cdm:token") || null
 });
@@ -25,14 +25,14 @@ export const INITIAL_STATE = Immutable({
 /* Reducers */
 
 export const success = (state, { token }) => {
-  console.log(token);
   return state.merge({ signedIn: true, token });
 };
-export const logout = state => state.merge({ signOut: false, token: null });
+export const logout = state =>
+  state.merge({ signOut: false, token: null, permission: null });
 
 export const permissionSuccess = (state, { permission }) => {
   console.log(permission);
-  state.merge({ permission: "permission" });
+  state.merge({ permission });
 };
 
 /* Reducers to types */

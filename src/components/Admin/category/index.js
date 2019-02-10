@@ -152,24 +152,25 @@ class Category extends Component {
               <th>Sub Categorias</th>
             </tr>
           </thead>
-          {category.data.map(category => (
-            <tbody key={category.id}>
-              <tr>
-                <th scope="row">{category.id}</th>
-                <td>{category.name}</td>
+          {category &&
+            category.data.map(category => (
+              <tbody key={category.id}>
+                <tr>
+                  <th scope="row">{category.id}</th>
+                  <td>{category.name}</td>
 
-                <td>
-                  {category.subCategories &&
-                    category.subCategories.length > 0 &&
-                    category.subCategories.map(subCategories => (
-                      <Badge className="m-1" key={subCategories.id}>
-                        {subCategories.name}
-                      </Badge>
-                    ))}
-                </td>
-              </tr>
-            </tbody>
-          ))}
+                  <td>
+                    {category.subCategories &&
+                      category.subCategories.length > 0 &&
+                      category.subCategories.map(subCategories => (
+                        <Badge className="m-1" key={subCategories.id}>
+                          {subCategories.name}
+                        </Badge>
+                      ))}
+                  </td>
+                </tr>
+              </tbody>
+            ))}
         </Table>
       </Container>
     );

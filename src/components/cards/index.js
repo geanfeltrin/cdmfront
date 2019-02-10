@@ -23,20 +23,19 @@ class cards extends Component {
     getPostRequest: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
       name: PropTypes.string
-    }).isRequired
+    })
   };
   componentDidMount() {
-    const { getPostRequest, activeCategory, getPermissionRequest } = this.props;
+    const { getPostRequest, activeCategory } = this.props;
 
     if (activeCategory) {
       getPostRequest();
     }
-    getPermissionRequest();
   }
   render() {
     const { activeCategory, post } = this.props;
 
-    if (!activeCategory) return <h1>Error</h1>;
+    if (!activeCategory) return <h1>Seja Bem-vindo</h1>;
     return (
       <Container>
         <Row>
@@ -83,7 +82,8 @@ class cards extends Component {
 }
 const mapStateToProps = state => ({
   activeCategory: state.category.active,
-  post: state.post
+  post: state.post,
+  auth: state.auth.permission
 });
 
 const mapDispatchToProps = dispatch =>

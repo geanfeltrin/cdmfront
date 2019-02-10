@@ -4,9 +4,13 @@ import { actions as toastrActions } from "react-redux-toastr";
 import CategoryAction from "../ducks/category";
 
 export function* getCategory() {
-  const response = yield call(api.get, "category");
+  try {
+    const response = yield call(api.get, "category");
 
-  yield put(CategoryAction.getCategorySuccess(response.data));
+    yield put(CategoryAction.getCategorySuccess(response.data));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export function* createCategory({ name }) {

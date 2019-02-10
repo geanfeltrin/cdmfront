@@ -8,9 +8,8 @@ const AdminRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      (store.getState().auth.signedIn &&
-        store.getState().auth.permisson === ["administrator"]) ||
-      store.getState().auth.permisson === ["moderator"] ? (
+      store.getState().auth.signedIn &&
+      store.getState().auth.permisson === ["administrator"] ? (
         <Component {...props} />
       ) : (
         <Redirect

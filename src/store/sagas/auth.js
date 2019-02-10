@@ -35,5 +35,6 @@ export function* signOut() {
 
 export function* getPermission() {
   const response = yield call(api.get, "sessions");
+  localStorage.setItem("@cdm:permission", response.data);
   yield put(AuthActions.getPermissionSuccess(response.data));
 }
