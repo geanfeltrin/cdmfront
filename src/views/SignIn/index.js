@@ -32,6 +32,7 @@ class SignIn extends Component {
 
     signInRequest(email, password);
   };
+
   render() {
     const { email, password } = this.state;
     return (

@@ -14,7 +14,7 @@ class SideBar extends Component {
     selectCategory: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
       name: PropTypes.string
-    }).isRequired
+    })
   };
 
   handleCategorySelect = category => {
@@ -28,7 +28,7 @@ class SideBar extends Component {
   render() {
     const { activeCategory, category } = this.props;
 
-    if (!activeCategory) return <h1 />;
+    if (!activeCategory) return null;
     return (
       <Container>
         <div>

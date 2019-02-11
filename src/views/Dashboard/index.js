@@ -5,7 +5,7 @@ import Sidebar from "../../components/Admin/siderbar";
 import Header from "../../components/Admin/header";
 import { Row, Col } from "reactstrap";
 
-import Users from "../../components/Admin/Users";
+// import Users from "../../components/Admin/Users";
 import Category from "../../components/Admin/Category";
 
 export default class Dashboard extends Component {

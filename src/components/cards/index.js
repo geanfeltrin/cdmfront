@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
+import AuthActions from "../../store/ducks/auth";
 
 import { Container } from "./styles";
 import {
@@ -22,7 +23,7 @@ class cards extends Component {
     getPostRequest: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
       name: PropTypes.string
-    }).isRequired
+    })
   };
   componentDidMount() {
     const { getPostRequest, activeCategory } = this.props;
@@ -34,7 +35,7 @@ class cards extends Component {
   render() {
     const { activeCategory, post } = this.props;
 
-    if (!activeCategory) return <h1 />;
+    if (!activeCategory) return <h1>Seja Bem-vindo</h1>;
     return (
       <Container>
         <Row>
@@ -81,11 +82,12 @@ class cards extends Component {
 }
 const mapStateToProps = state => ({
   activeCategory: state.category.active,
-  post: state.post
+  post: state.post,
+  auth: state.auth.permission
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(PostActions, dispatch);
+  bindActionCreators({ ...PostActions, ...AuthActions }, dispatch);
 
 export default connect(
   mapStateToProps,
