@@ -12,7 +12,7 @@ import logoRese from "../../assets/logoRese.png";
 // import user from "../../assets/userlogin.png";
 
 class SignIn extends Component {
-  static Proptypes = {
+  static propTypes = {
     signInRequest: Proptypes.func.isRequired
   };
 
