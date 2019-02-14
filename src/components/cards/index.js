@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
-import AuthActions from "../../store/ducks/auth";
+
 
 import { Container } from "./styles";
 import {
@@ -83,11 +83,11 @@ class cards extends Component {
 const mapStateToProps = state => ({
   activeCategory: state.category.active,
   post: state.post,
-  auth: state.auth.permission
+  
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ ...PostActions, ...AuthActions }, dispatch);
+  bindActionCreators(PostActions, dispatch);
 
 export default connect(
   mapStateToProps,
