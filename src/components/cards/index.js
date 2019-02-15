@@ -5,7 +5,6 @@ import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
 
-
 import { Container } from "./styles";
 import {
   Card,
@@ -51,13 +50,14 @@ class cards extends Component {
           {post.data.map(post => {
             if (post.subcategories.id === activeCategory.id) {
               return (
-                <Col key={post.id} sm="4">
+                <Col key={post.id} sm="2" className="cards-body">
                   <Card key={post.id}>
                     <CardImg
                       top
                       width="100%"
                       src={post.file.url}
                       alt={post.title}
+                      className="cards-body-img"
                     />
                     <CardBody>
                       <CardTitle>{post.title}</CardTitle>
@@ -82,8 +82,7 @@ class cards extends Component {
 }
 const mapStateToProps = state => ({
   activeCategory: state.category.active,
-  post: state.post,
-  
+  post: state.post
 });
 
 const mapDispatchToProps = dispatch =>

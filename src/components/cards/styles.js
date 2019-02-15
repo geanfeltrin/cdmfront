@@ -26,8 +26,14 @@ export const Container = styled.div`
     color: #646464;
     text-align: end;
   }
-  .card {
-    margin: 20px;
+  .cards-body-img {
+    /* width: 300px !important; */
+    height: 169px !important;
+  }
+  .cards-body {
+    min-width: 300px !important;
+    max-width: 300px !important;
+    margin-bottom: 15px;
   }
 
   img {

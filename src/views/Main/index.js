@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
-import Search from "../../components/search";
+// import Search from "../../components/search";
 import SideBar from "../../components/sidebar";
 import Cards from "../../components/cards";
 import { Container, Wrapper } from "./styles";
@@ -13,7 +13,6 @@ export default class Main extends Component {
       <Wrapper>
         <Header />
         <Container>
-          <Search />
           <Row>
             <Col sm={2}>
               <SideBar />
