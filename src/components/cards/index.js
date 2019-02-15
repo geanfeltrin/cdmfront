@@ -73,7 +73,7 @@ class cards extends Component {
                   </Card>
                 </Col>
               );
-            } else return null;
+            } else return <h1>TEM</h1>;
           })}
         </Row>
       </Container>

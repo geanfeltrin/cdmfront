@@ -14,7 +14,7 @@ import {
   UncontrolledDropdown,
   DropdownItem
 } from "reactstrap";
-import user from "../../assets/userlogin.png";
+import user from "../../assets/favicon.png";
 
 class User extends Component {
   static propTypes = {
@@ -46,9 +46,9 @@ class User extends Component {
               Usuário
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem tag="a" href="/perfil">
+              {/* <DropdownItem tag="a" href="/perfil">
                 Alterar senha
-              </DropdownItem>
+              </DropdownItem> */}
               <DropdownItem href="/" onClick={signOut}>
                 Sair
               </DropdownItem>
