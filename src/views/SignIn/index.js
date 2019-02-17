@@ -53,22 +53,24 @@ class SignIn extends Component {
           <img src={logo} alt="Logo" />
 
           <h1>Faça Seu login</h1>
-
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleInputChange}
-            placeholder="Nome de Usuário"
-          />
-
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleInputChange}
-            placeholder="Senha"
-          />
+          <div className="user-email">
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={this.handleInputChange}
+              placeholder="Nome de Usuário"
+            />
+          </div>
+          <div className="user-password">
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleInputChange}
+              placeholder="Senha"
+            />
+          </div>
           <button type="submit">Entrar</button>
           <a href="/" alt="Recuperar senha">
             Esqueceu sua senha

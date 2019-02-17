@@ -42,9 +42,7 @@ class User extends Component {
         <img src={user} alt="Imagem do Usuário" />
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <UncontrolledDropdown setActiveFromChild>
-            <DropdownToggle tag="a" className="nav-link" caret>
-              Usuário
-            </DropdownToggle>
+            <DropdownToggle tag="a" className="nav-link" caret />
             <DropdownMenu>
               {/* <DropdownItem tag="a" href="/perfil">
                 Alterar senha
