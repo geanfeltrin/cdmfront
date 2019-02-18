@@ -64,11 +64,10 @@ class nav extends Component {
 
     return (
       <Container>
-        <Navbar color="transparent" light expand="md">
+        <Navbar color="white" light expand="lg">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar />
-
+            <Nav className="mr-auto" navbar />
             {category.data.map(category => (
               <UncontrolledDropdown nav inNavbar key={Math.random()}>
                 <DropdownToggle

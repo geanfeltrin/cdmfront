@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import device from "../../styles/devices";
 
 export const Container = styled.header`
   width: 100%;
   max-height: 70px;
   background: #ffffff;
   border: 1px solid #e7e7e7;
+  ${device.mobileS`
+      flex-direction: column;
+      max-height: none;
+    `}
 `;
 
 export const Content = styled.div`
@@ -13,6 +18,9 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  ${device.phone`
+      flex-direction: column;
+    `}
   img {
     width: 100px;
     margin-left: 100px;

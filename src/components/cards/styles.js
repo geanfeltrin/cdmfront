@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "../../styles/devices";
 
 export const Container = styled.div`
   display: flex;
@@ -7,6 +8,15 @@ export const Container = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-right: 60px;
+
+  ${device.phone`
+  margin-right: 0px;
+  margin-left: 20px;
+  align-content: center;
+  justify-content: center;
+  
+  
+  `}
 
   h1 {
     margin-left: 15px;
@@ -62,7 +72,8 @@ export const Container = styled.div`
     font-weight: bold;
     line-height: normal;
     font-size: 14px;
-
+    width: 100%;
+    margin-bottom: 20px;
     color: #000000;
   }
 `;

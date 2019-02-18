@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import device from "../../styles/devices";
 
 export const Container = styled.footer`
   display: block;
@@ -6,6 +7,16 @@ export const Container = styled.footer`
   flex: 1;
   background-color: #ffffff;
   flex-direction: column;
+
+  ${device.phone`
+    max-height: none;
+    `}
+  ${device.tablet`
+   max-height: none;
+   `} 
+   ${device.laptop`
+   max-height: none;
+   `} 
 
   h1 {
     color: #000000;
@@ -15,12 +26,20 @@ export const Container = styled.footer`
     font-weight: bold;
     line-height: normal;
     font-size: 24px;
+    ${device.phone`
+    margin: 0px 5px;
+    `}
   }
 
-  img {
+  >img {
     display: flex;
     width: 100%;
     margin-top: 10px;
+
+    ${device.phone`
+    margin-top: 0px;
+    height: 10px;
+    `}
   }
 `;
 
@@ -28,6 +47,14 @@ export const Content = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-left: 70px;
+  flex-wrap: wrap;
+
+  ${device.phone`
+    margin-left: 0px;    
+    `}
+  ${device.tablet`
+   margin-left: 0px;
+   `} 
 
   div {
     flex-direction: column;
@@ -66,6 +93,14 @@ export const Content = styled.div`
     justify-content: flex-end;
     align-items: flex-end;
     margin-left: 480px;
+
+    ${device.laptop`
+  margin-left: 0px;
+   `}
+    ${device.laptopL`
+  margin-left: 0px;
+   `}
+
     img {
       width: 100px;
     }

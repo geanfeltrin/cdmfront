@@ -24,6 +24,7 @@ class cards extends Component {
       name: PropTypes.string
     })
   };
+
   componentDidMount() {
     const { getPostRequest, activeCategory } = this.props;
 
@@ -37,7 +38,7 @@ class cards extends Component {
     if (!activeCategory) return <h1>Seja Bem-vindo</h1>;
     return (
       <Container>
-        <Row>
+        <Row className="title">
           <Col sm={10}>
             <h1>{activeCategory.categoryName}</h1>
           </Col>
@@ -55,7 +56,7 @@ class cards extends Component {
                     <CardImg
                       top
                       width="100%"
-                      src={post.file.url}
+                      src={post.imagem}
                       alt={post.title}
                       className="cards-body-img"
                     />
