@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import AuthActions from "../../store/ducks/auth";
 
 import { Container, Form, Content } from "./styles";
-import BackgroundImg from "../../assets/background.png";
+import BackgroundImg from "../../assets/background.jpg";
 import logo from "../../assets/logo.png";
 import logoRese from "../../assets/logoRese.png";
 // import user from "../../assets/userlogin.png";
