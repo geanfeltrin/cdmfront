@@ -8,12 +8,14 @@ export const Container = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-right: 60px;
+  overflow: auto;
 
   ${device.phone`
   margin-right: 0px;
   margin-left: 20px;
   align-content: center;
   justify-content: center;
+  
   
   
   `}

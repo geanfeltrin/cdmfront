@@ -6,7 +6,7 @@ export const Container = styled.header`
   max-height: 70px;
   background: #ffffff;
   border: 1px solid #e7e7e7;
-  ${device.mobileS`
+  ${device.phone`
       flex-direction: column;
       max-height: none;
     `}

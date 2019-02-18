@@ -9,7 +9,11 @@ export const Container = styled.footer`
   flex-direction: column;
 
   ${device.phone`
-    max-height: none;
+      max-height: none;
+      display: none;
+      left: 0;
+      bottom: 0;
+    
     `}
   ${device.tablet`
    max-height: none;

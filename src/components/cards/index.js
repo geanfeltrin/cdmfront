@@ -47,7 +47,7 @@ class cards extends Component {
           </Col>
         </Row>
 
-        <Row className="justify-content-md-left">
+        <Row>
           {post.data.map(post => {
             if (post.subcategories.id === activeCategory.id) {
               return (
@@ -56,7 +56,7 @@ class cards extends Component {
                     <CardImg
                       top
                       width="100%"
-                      src={post.imagem}
+                      src={post.file.url}
                       alt={post.title}
                       className="cards-body-img"
                     />
