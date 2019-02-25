@@ -38,10 +38,7 @@ export const Container = styled.div`
     color: #646464;
     text-align: end;
   }
-  .cards-body-img {
-    /* width: 300px !important; */
-    height: 169px !important;
-  }
+
   .cards-body {
     min-width: 300px !important;
     max-width: 300px !important;
@@ -78,4 +75,14 @@ export const Container = styled.div`
     margin-bottom: 20px;
     color: #000000;
   }
+`;
+
+export const CardImg = styled.div`
+  width: 100%;
+  height: 169px !important;
+  background-image: url(${props => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  cursor: "pointer";
 `;
