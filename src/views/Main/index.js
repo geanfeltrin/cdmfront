@@ -21,9 +21,8 @@ export default class Main extends Component {
               <Cards />
             </Col>
           </Row>
+          <Footer />
         </Container>
-
-        <Footer />
       </Wrapper>
     );
   }

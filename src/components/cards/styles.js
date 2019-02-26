@@ -79,3 +79,9 @@ export const Container = styled.div`
     color: #000000;
   }
 `;
+
+export const Content = styled.div`
+  .txt-center {
+    text-align: center;
+  }
+`;
