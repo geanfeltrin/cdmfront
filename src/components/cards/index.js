@@ -5,11 +5,10 @@ import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
 
-import { Container, Content } from "./styles";
+import { Container, CardImg } from "./styles";
 import {
   Card,
   Button,
-  CardImg,
   CardTitle,
   CardText,
   CardBody,
@@ -84,7 +83,6 @@ class cards extends Component {
                 <Col key={post.id} sm="2" className="cards-body">
                   <Card key={post.id}>
                     <CardImg
-                      top
                       src={post.file.url}
                       width="100%"
                       alt={post.title}
