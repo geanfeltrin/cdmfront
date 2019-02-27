@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 
 import PostActions from "../../store/ducks/post";
 
-import { Container, CardImg } from "./styles";
+import { Container, CardImg, Content } from "./styles";
 import {
   Card,
   Button,
@@ -37,17 +37,17 @@ class cards extends Component {
     if (!activeCategory)
       return (
         <Content>
-          <h1>Seja Bem-vindo</h1>
+          <h1 className="txt-welcome">Seja Bem-vindo</h1>
 
           <Col fluid>
             <h1 className="txt-center">Campanha Mês das Mulheres</h1>
             <Row>
               <Col className="m-3">
                 <img
-                  className="mx-auto d-block"
-                  src="https://uc33920efe796de91f1fb0266c21.previews.dropboxusercontent.com/p/thumb/AAVpDrAm97NSaRLaQOmtq-PfYfwnyzGC2ffQfyHoG6yrQcwGglcCDGP1ijvBN76ZYu_c7rfqRXtgtelrWNPmrDbsOzOiKaizwHafxExet5R-vgLPqzgp-LPC888U5t1eJASa-7eRlRTjTCRQjd3fdYsDNAniKceI6WYDOB-61v3aDmwkAOjPXAgeYdjb7AvYdRm8fHrWvFRCrKEEua0ahmKgKNBkwSo18xco7HJ-sW1lgx5ifPgdxx7sZ9W-XqDfSSPvMfwxZOjAit-MVZ5sc0uOoo3j8mksf9d-w7VkxLAzJbsGQrrtDtaitFzY-cU3EG3Xh0NgWnMu11Shs6-666t9/p.jpeg?size_mode=5"
-                  width="600px"
-                  height="700px"
+                  className="img-fluid mx-auto d-block"
+                  src="http://cdm.escolatecnicaresidencia.com.br/api/files/5"
+                  width="500px"
+                  height="400px"
                   alt="campanha mulheres"
                 />
               </Col>

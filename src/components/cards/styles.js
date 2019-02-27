@@ -77,6 +77,12 @@ export const Container = styled.div`
   }
 `;
 
+export const Content = styled.div`
+  .txt-center {
+    text-align: center;
+  }
+`;
+
 export const CardImg = styled.div`
   width: 100%;
   height: 169px !important;
