@@ -13,7 +13,7 @@ export default class Main extends Component {
       <Wrapper>
         <Header />
         <Container>
-          <Row>
+          <Row className="min-height">
             <Col sm={2}>
               <SideBar />
             </Col>
@@ -21,8 +21,8 @@ export default class Main extends Component {
               <Cards />
             </Col>
           </Row>
-          <Footer />
         </Container>
+        <Footer />
       </Wrapper>
     );
   }

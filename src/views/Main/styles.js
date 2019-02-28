@@ -6,17 +6,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
   overflow-x: hidden;
 `;
 
 export const Container = styled.div`
-  height: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: column;
   margin-top: 60px;
   margin-bottom: 30px;
+  overflow-y: none;
   > div {
     width: 100%;
   }
@@ -28,6 +25,9 @@ export const Container = styled.div`
   margin-right: 0px;
   
   `}
+  .min-height {
+    min-height: 400px;
+  }
 `;
 
 export const Content = styled.div`

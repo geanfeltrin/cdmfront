@@ -74,6 +74,7 @@ export const Container = styled.div`
     width: 100%;
     margin-bottom: 20px;
     color: #000000;
+    overflow-x: hidden;
   }
 `;
 
