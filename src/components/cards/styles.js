@@ -15,9 +15,7 @@ export const Container = styled.div`
   margin-left: 20px;
   align-content: center;
   justify-content: center;
-  
-  
-  
+    
   `}
 
   h1 {
@@ -44,20 +42,41 @@ export const Container = styled.div`
     max-width: 300px !important;
     margin-bottom: 15px;
   }
+  .cards-body-content {
+    padding: 0px;
+    min-height: 140px !important;
+    max-height: 140px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-title {
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 0px;
+  }
 
+  .card-text {
+    margin-bottom: 3rem;
+    font-size: 13px;
+    font-style: italic;
+    padding-left: 20px;
+  }
   img {
     height: 180px;
   }
   .bnt-download {
     background: #ff9900;
-    border-radius: 5px;
+    height: 35px;
     border: none;
     font-family: "Lato";
     font-style: normal;
     font-weight: bold;
     line-height: normal;
     font-size: 14px;
+    width: 100%;
     text-align: center;
+    border-radius: unset;
 
     color: #ffffff;
 
@@ -75,6 +94,22 @@ export const Container = styled.div`
     margin-bottom: 20px;
     color: #000000;
     overflow-x: hidden;
+  }
+
+  .block-with-text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 6em; /* aqui vc controla a altura da caixa de texto */
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+  }
+  .block-with-text:before {
+    content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 `;
 

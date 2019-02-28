@@ -26,7 +26,7 @@ export const Container = styled.div`
   
   `}
   .min-height {
-    min-height: 400px;
+    min-height: 420px;
   }
 `;
 

@@ -89,10 +89,12 @@ class cards extends Component {
                       className="cards-body-img"
                     />
 
-                    <CardBody>
+                    <CardBody className="cards-body-content">
                       <CardTitle>{post.title}</CardTitle>
                       {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                      <CardText>{post.description}</CardText>
+                      <CardText className="block-with-text">
+                        {post.description}
+                      </CardText>
                       <Button
                         className="float-right text-uppercase bnt-download"
                         href={post.url}
