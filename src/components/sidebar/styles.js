@@ -86,7 +86,7 @@ export const Container = styled.aside`
     line-height: normal;
     font-size: 16px;
     text-decoration: none;
-
+    cursor: pointer;
     color: #646464;
     text-decoration: none;
 

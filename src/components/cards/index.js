@@ -81,21 +81,14 @@ class cards extends Component {
             if (post.subcategories.id === activeCategory.id) {
               return (
                 <Col key={post.id} sm="2" className="cards-body">
-                  <Card key={post.id}>
-                  {!!post.file.url  ? (
-                      <CardImg
-                      src={post.file.url}
-                      width="100%"
-                      alt={post.title}
-                      className="cards-body-img"
-                      />
-                  ) : (<CardImg
-                    src={imgDefault}
+                  <Card key={post.id}>                  
+                 <CardImg
+                    src={post.file.url}
                     width="100%"
                     alt={post.title}
                     className="cards-body-img"
-                    />)}
-                   
+                    />              
+                                   
 
                     <CardBody className="cards-body-content">
                       <CardTitle>{post.title}</CardTitle>

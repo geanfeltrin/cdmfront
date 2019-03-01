@@ -40,8 +40,7 @@ class SideBar extends Component {
                   <ul key={Math.random()}>
                     <li key={Math.random()}>
                       <a
-                        href="/"
-                        key={subCategories.id}
+                                               key={subCategories.id}
                         onClick={() =>
                           this.handleCategorySelect({
                             categoryName: category.name,
