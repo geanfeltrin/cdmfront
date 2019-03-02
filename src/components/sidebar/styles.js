@@ -25,7 +25,7 @@ export const Container = styled.aside`
   max-width: 200px;
   background-color: transparent;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
 
   ${media.tablet`display:none;`}
@@ -44,6 +44,7 @@ export const Container = styled.aside`
     flex-direction: column;
     margin: 10px;
     margin-top: 0px;
+    align-items: stretch;
 
     &:first-child {
       border-bottom: 1px solid #e7e7e7;

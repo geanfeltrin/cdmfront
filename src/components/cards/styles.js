@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import device from "../../styles/devices";
 
 export const Container = styled.div`
@@ -36,6 +36,9 @@ export const Container = styled.div`
     color: #646464;
     text-align: end;
   }
+  .full-width {
+    width: 100% !important;
+  }
 
   .cards-body {
     min-width: 300px !important;
@@ -57,10 +60,26 @@ export const Container = styled.div`
   }
 
   .card-text {
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     font-size: 13px;
     font-style: italic;
     padding-left: 20px;
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    ${props =>
+      (props.test =
+        true &&
+        css`
+          &:hover {
+            text-overflow: clip;
+            width: auto;
+            height: 200px;
+            white-space: normal;
+            position: relative;
+          }
+        `)}
   }
   img {
     height: 180px;
@@ -97,19 +116,15 @@ export const Container = styled.div`
   }
 
   .block-with-text {
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
     overflow: hidden;
-    position: relative;
-    line-height: 1.2em;
-    max-height: 6em; /* aqui vc controla a altura da caixa de texto */
-    text-align: justify;
-    margin-right: -1em;
-    padding-right: 1em;
-  }
-  .block-with-text:before {
-    content: "...";
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    &:hover {
+      text-overflow: clip;
+      width: auto;
+      white-space: normal;
+    }
   }
 `;
 

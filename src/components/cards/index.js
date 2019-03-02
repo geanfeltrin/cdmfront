@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import imgDefault from '../../assets/default.jpeg'
+import imgDefault from "../../assets/default.jpeg";
 import PostActions from "../../store/ducks/post";
 
 import { Container, CardImg, Content } from "./styles";
@@ -11,6 +11,7 @@ import {
   Button,
   CardTitle,
   CardText,
+  CardSubtitle,
   CardBody,
   Row,
   Col
@@ -76,24 +77,40 @@ class cards extends Component {
           </Col>
         </Row>
 
-        <Row>
+        <Row className="full-width">
           {post.data.map(post => {
             if (post.subcategories.id === activeCategory.id) {
               return (
                 <Col key={post.id} sm="2" className="cards-body">
-                  <Card key={post.id}>                  
-                 <CardImg
-                    src={post.file.url}
-                    width="100%"
-                    alt={post.title}
-                    className="cards-body-img"
-                    />              
-                                   
+                  <Card key={post.id}>
+                    {post.file_id === null ? (
+                      <CardImg
+                        src={imgDefault}
+                        width="100%"
+                        alt={post.title}
+                        className="cards-body-img"
+                      />
+                    ) : (
+                      <CardImg
+                        src={post.file.url}
+                        width="100%"
+                        alt={post.title}
+                        className="cards-body-img"
+                      />
+                    )}
 
                     <CardBody className="cards-body-content">
                       <CardTitle>{post.title}</CardTitle>
-                      {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                      <CardText className="block-with-text">
+                      {/* <CardSubtitle>{post.description}</CardSubtitle> */}
+                      {console.log("tamanho", post.description.length)}
+                      {console.log(
+                        "exite",
+                        post.description.length > 10 ? "expand" : "default"
+                      )}
+
+                      <CardText
+                        test={post.description.length > 10 ? "true" : "false"}
+                      >
                         {post.description}
                       </CardText>
                       <Button
