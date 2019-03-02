@@ -8,12 +8,15 @@ import User from "../user";
 import cdmlogo from "../../assets/cdmlogo.png";
 
 export default class Header extends Component {
+  handleClearStorage = e => {
+    localStorage.removeItem("@Cdm:category");
+  };
   render() {
     return (
       <Container>
         <Content>
           <Col className="col-sm-2">
-            <a href="/">
+            <a href="/" onClick={this.handleClearStorage}>
               <img src={cdmlogo} alt="Logo" />
             </a>
           </Col>

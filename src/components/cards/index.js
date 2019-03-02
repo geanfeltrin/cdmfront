@@ -40,7 +40,7 @@ class cards extends Component {
         <Content>
           <h1 className="txt-welcome">Seja Bem-vindo</h1>
 
-          <Col fluid>
+          <Col>
             <h1 className="txt-center">Campanha Mês das Mulheres</h1>
             <Row>
               <Col className="m-3">
@@ -102,17 +102,7 @@ class cards extends Component {
                     <CardBody className="cards-body-content">
                       <CardTitle>{post.title}</CardTitle>
                       {/* <CardSubtitle>{post.description}</CardSubtitle> */}
-                      {console.log("tamanho", post.description.length)}
-                      {console.log(
-                        "exite",
-                        post.description.length > 10 ? "expand" : "default"
-                      )}
-
-                      <CardText
-                        test={post.description.length > 10 ? "true" : "false"}
-                      >
-                        {post.description}
-                      </CardText>
+                      <CardText expand="true">{post.description}</CardText>
                       <Button
                         className="float-right text-uppercase bnt-download"
                         href={post.url}

@@ -9,15 +9,23 @@ export const Container = styled.div`
   flex-wrap: wrap;
   margin-right: 60px;
   overflow: auto;
+  width: 100%;
 
-  ${device.phone`
+  ${device.mobileS`
   margin-right: 0px;
-  margin-left: 20px;
+  margin-left: 0;
   align-content: center;
-  justify-content: center;
-    
+  justify-content: center;    
   `}
-
+  ${device.mobileM`
+    margin-right: 0px;
+    margin-left: 0;
+    align-content: center;
+    justify-content: center; 
+`}
+${device.mobileL`
+margin-left: 5px;
+`}
   h1 {
     margin-left: 15px;
     font-family: "Lato";
@@ -26,6 +34,10 @@ export const Container = styled.div`
     line-height: normal;
     font-size: 24px;
     color: #000000;
+    ${device.phone`
+    margin-left: 0px;
+  
+  `}
   }
   strong {
     font-family: "Lato";
@@ -36,9 +48,9 @@ export const Container = styled.div`
     color: #646464;
     text-align: end;
   }
-  .full-width {
+  /* .full-width {
     width: 100% !important;
-  }
+  } */
 
   .cards-body {
     min-width: 300px !important;
@@ -64,23 +76,28 @@ export const Container = styled.div`
     font-size: 13px;
     font-style: italic;
     padding-left: 20px;
-    width: 100px;
+    width: 250px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     ${props =>
-      (props.test =
-        true &&
-        css`
-          &:hover {
-            text-overflow: clip;
-            width: auto;
-            height: 200px;
-            white-space: normal;
-            position: relative;
-          }
-        `)}
+      props.expand === "true"
+        ? css`
+            &:hover {
+              text-overflow: clip;
+              width: auto;
+              height: 200px;
+              white-space: normal;
+              position: relative;
+            }
+          `
+        : css`
+            &:hover {
+              white-space: normal;
+            }
+          `}
   }
+
   img {
     height: 180px;
   }
