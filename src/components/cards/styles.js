@@ -7,25 +7,27 @@ export const Container = styled.div`
   align-content: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-right: 60px;
-  overflow: auto;
+  margin-right: 60px;  
+  overflow-x: none !important;
   width: 100%;
-
-  ${device.mobileS`
-  margin-right: 0px;
-  margin-left: 0;
+  ${device.phone`
   align-content: center;
-  justify-content: center;    
+  justify-content: center;
+  margin-left: 1.5em;
+  margin-right: 0px;
+  `}
+  ${device.mobileS`
+  align-content: center;
+  justify-content: center;
+  margin-left: 1em;
   `}
   ${device.mobileM`
-    margin-right: 0px;
-    margin-left: 0;
-    align-content: center;
-    justify-content: center; 
-`}
-${device.mobileL`
-margin-left: 5px;
-`}
+  align-content: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 0px;
+  `} 
+
   h1 {
     margin-left: 15px;
     font-family: "Lato";
@@ -47,6 +49,12 @@ margin-left: 5px;
     font-size: 20px;
     color: #646464;
     text-align: end;
+    ${device.tablet`
+       
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    `}
   }
   /* .full-width {
     width: 100% !important;
