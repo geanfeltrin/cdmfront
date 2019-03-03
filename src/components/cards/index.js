@@ -11,7 +11,6 @@ import {
   Button,
   CardTitle,
   CardText,
-  CardSubtitle,
   CardBody,
   Row,
   Col
@@ -101,7 +100,6 @@ class cards extends Component {
 
                     <CardBody className="cards-body-content">
                       <CardTitle>{post.title}</CardTitle>
-                      {/* <CardSubtitle>{post.description}</CardSubtitle> */}
                       <CardText expand="true">{post.description}</CardText>
                       <Button
                         className="float-right text-uppercase bnt-download"

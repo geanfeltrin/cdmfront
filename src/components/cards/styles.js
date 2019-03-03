@@ -67,7 +67,7 @@ export const Container = styled.div`
   .cards-body-content {
     padding: 0px;
     min-height: 140px !important;
-    max-height: 140px !important;
+    max-height: max-content !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
