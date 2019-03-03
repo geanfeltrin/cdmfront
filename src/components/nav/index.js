@@ -64,7 +64,7 @@ class nav extends Component {
 
     return (
       <Container>
-        <Navbar color="white" light expand="lg">
+        <Navbar color="white" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar />
@@ -85,7 +85,6 @@ class nav extends Component {
                   <div className="item">
                     {category.subCategories.map(subCategories => (
                       <DropdownItem
-                        
                         onClick={() =>
                           this.handleCategorySelect({
                             categoryName: category.name,

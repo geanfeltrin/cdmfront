@@ -4,6 +4,7 @@ import { Container, Content } from "./styles";
 import { Col } from "reactstrap";
 import NavBar from "../nav";
 import User from "../user";
+import { Navbar } from "reactstrap";
 // import Submenu from "../subnav";
 import cdmlogo from "../../assets/cdmlogo.png";
 

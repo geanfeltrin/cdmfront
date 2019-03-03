@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import device from "../../styles/devices";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ export const Container = styled.div`
     color: #000000;
     ${device.phone`
     margin-left: 0px;
+    
   
   `}
   }
@@ -49,16 +51,13 @@ export const Container = styled.div`
     font-size: 20px;
     color: #646464;
     text-align: end;
-    ${device.tablet`
-       
+    ${device.tablet`       
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     `}
   }
-  /* .full-width {
-    width: 100% !important;
-  } */
+  
 
   .cards-body {
     min-width: 300px !important;
@@ -77,6 +76,7 @@ export const Container = styled.div`
     padding-top: 10px;
     padding-left: 15px;
     margin-bottom: 0px;
+
   }
 
   .card-text {
@@ -156,6 +156,17 @@ export const Container = styled.div`
 export const Content = styled.div`
   .txt-center {
     text-align: center;
+    ${media.between("320px", "425px")`
+     font-size: 1.5rem;
+     text-align: center;
+  `}
+  }
+  .txt-welcome {
+    text-align: center;
+    ${media.between("320px", "425px")`
+     font-size: 1.5rem;
+     text-align: center;
+  `}
   }
 `;
 

@@ -22,7 +22,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px;
-  margin-right: 122px;
+  margin-right: 0px;
 
   ${media.tablet`display:none;`}
   ${media.phone`display:none;`}  

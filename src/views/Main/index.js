@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Footer from "../../components/footer";
-import Header from "../../components/header";
+import Header from "../../components/heade2";
 // import Search from "../../components/search";
 import SideBar from "../../components/sidebar";
 import Cards from "../../components/cards";
-import { Container, Wrapper, Test, Test2, Content } from "./styles";
+import { Container, Wrapper } from "./styles";
 import { Row, Col } from "reactstrap";
 
 export default class Main extends Component {
