@@ -112,21 +112,36 @@ export const Container = styled.div`
   .bnt-download {
     background: #ff9900;
     height: 35px;
-    border: none;
     font-family: "Lato";
     font-style: normal;
     font-weight: bold;
     line-height: normal;
     font-size: 14px;
-    width: 100%;
+    width: auto;
     text-align: center;
-    border-radius: unset;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+    border: 1px solid #ff9900;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px rgba(126, 87, 30, 0.5);
 
     color: #ffffff;
 
     &:hover {
-      background: #e88b00;
+      background: #e88b00 !important;
+    box-shadow: 0px 2px 4px rgba(126, 87, 30, 0.5) !important;
+    border: 1px solid #E28800 !important;
+    box-sizing: border-box;
     }
+  &:active{
+    background: #e88b00 !important;
+    box-shadow: 0px 2px 4px rgba(126, 87, 30, 0.5) !important;
+    border: 1px solid #E28800 !important;
+    box-sizing: border-box;
+  }
   }
   .title {
     font-family: "Lato";
