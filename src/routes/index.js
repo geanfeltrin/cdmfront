@@ -14,16 +14,16 @@ import Guest from "./guest";
 
 import Main from "../views/Main";
 import SignIn from "../views/SignIn";
-// import Perfil from "../views/Perfil";
-// import Dashboard from "../views/Dashboard";
+import Perfil from "../views/perfil";
+
 
 const Routes = () => (
   <ConnectedRouter history={history}>
     <Switch>
       <Guest path="/signin" component={SignIn} />
       <Private path="/" exact component={Main} />
-      {/* <Private path="/perfil" component={Perfil} />
-      <Private path="/admin" component={Dashboard} /> */}
+      <Private path="/perfil" component={Perfil} />
+      
     </Switch>
   </ConnectedRouter>
 );

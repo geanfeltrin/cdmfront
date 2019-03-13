@@ -38,5 +38,31 @@ export const Container = styled.div`
     font-family: "Lato";
     margin-top: 10px;
     color: #646464 !important;
+
+  }
+
+  span{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #646464;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .btn {
+    
+      border: none !important;
+
+      &:active{
+        border: none !important;
+      }
+      &:focus{
+        box-shadow: none !important;
+      }
+      
+    
+
   }
 `;

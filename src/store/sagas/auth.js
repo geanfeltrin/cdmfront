@@ -9,8 +9,9 @@ export function* signIn({ email, password }) {
   try {
     const response = yield call(api.post, "sessions", { email, password });
     console.log(response.data);
-    localStorage.setItem("@cdm:token", response.data.token);
-    yield put(AuthActions.signInSuccess(response.data.token));
+    localStorage.setItem("@cdm:token", response.data.token.token);
+    localStorage.setItem("@cdm:user", response.data.user.map(user => user.username))
+    yield put(AuthActions.signInSuccess(response.data.token.token));
 
     /* Permissao */
 
@@ -30,6 +31,7 @@ export function* signIn({ email, password }) {
 
 export function* signOut() {
   localStorage.removeItem("@cdm:token");
+  localStorage.removeItem("@cdm:user");
   yield put(push("/"));
 }
 

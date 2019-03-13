@@ -33,6 +33,7 @@ class cards extends Component {
   }
   render() {
     const { activeCategory, post } = this.props;
+  
 
     if (!activeCategory)
       return (

@@ -12,9 +12,10 @@ import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
-  DropdownItem
+  DropdownItem,
+  ButtonDropdown
 } from "reactstrap";
-import user from "../../assets/favicon.png";
+import users from "../../assets/favicon.png";
 
 class User extends Component {
   static propTypes = {
@@ -36,29 +37,35 @@ class User extends Component {
   }
 
   render() {
-    const { signOut } = this.props;
+    const { signOut} = this.props;
+    const username = localStorage.getItem("@cdm:user");
+    
     return (
-      <Container>
-        <img src={user} alt="Imagem do Usuário" />
-        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-          <UncontrolledDropdown setActiveFromChild>
-            <DropdownToggle tag="a" className="nav-link" caret />
-            <DropdownMenu>
-              {/* <DropdownItem tag="a" href="/perfil">
+      <Container>          
+       
+
+  <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="btn"  >
+        <DropdownToggle caret color="transparent" className="btn">
+        <img src={users} alt="Imagem do Usuário" />
+        <span>{username}</span> 
+        </DropdownToggle>
+        <DropdownMenu>
+        <DropdownItem tag="a" href="/perfil">
                 Alterar senha
-              </DropdownItem> */}
+              </DropdownItem>
               <DropdownItem href="/" onClick={signOut}>
                 Sair
               </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
-        </Dropdown>
+        </DropdownMenu>
+      </ButtonDropdown>
       </Container>
     );
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+ 
+});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(AuthActions, dispatch);
