@@ -84,16 +84,15 @@ export const Form = styled.form`
   padding: 30px;
   display: flex;
   flex-direction: column;
-  
+  border-radius: 5px;  
   width: 500px;
   background-color: #fff;
-
   -webkit-box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.2);
   flex-wrap: 1;
-  justify-content: center;
-  align-content: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 
   ${device.mobileL`
       padding: 20px;
@@ -109,22 +108,19 @@ export const Form = styled.form`
       `}
 
 
-  img {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    width: 305px;
-    ${device.mobileS`
-        margin-bottom: 0px;      
-      `}
-  }
+.txt-box{
+  display:flex;
+  width:100%;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
 
   h1 {
     font-size: 40px;
     text-align: center;
     margin: 10px;
     font-family: "Lato bold", sans-serif;
-
     ${device.mobileS`
         font-size: 35px;     
       `}
@@ -132,18 +128,18 @@ export const Form = styled.form`
 
   
   input {
-    margin: 5px;
+   
     margin-top: 10px;
     padding-left: 30px;
     width: 100%;
-    height: 70px;
-    background: ${props => `url(${props.img}) no-repeat top center`};
-    -webkit-box-shadow: 6px 3px 6px 0px rgba(230, 230, 230, 1);
-    -moz-box-shadow: 6px 3px 6px 0px rgba(230, 230, 230, 1);
-    box-shadow: 6px 3px 6px 0px rgba(230, 230, 230, 1);
+    height: 50px;
     border: none;
+    border-radius: 5px;
     border-color: #e6e6e6;
     color: #a2a2a2;
+    -webkit-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    -moz-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
     font-size: 15px;
     font-family: "Lato", sans-serif;
     &::-webkit-input-placeholder {
@@ -153,17 +149,33 @@ export const Form = styled.form`
     width: 90%;
     `}
   }
-
-  button {
-    margin-left: 14px;
-    margin-top: 10px;
+.input-box{
+  display: flex;
+    justify-content: flex-start;
     align-items: center;
-    height: 70px;
+    width: 100%
+}
+.check-box{
+  margin: 10px;
+  height: 30px;
+  width:20px;
+  border: none;
+  box-shadow: none;
+}
+
+span{
+  font-family: 'Lato';
+  cursor: pointer;
+}
+  button {
+    margin-left: 4px;
+    margin-top: 10px;
+    border-radius: 5px;
+    align-items: center;
+    height: 50px;
+    width: 100px;
     background-color: #008296;
-    color: #fff;
-    -webkit-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
-    -moz-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
-    box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    color: #fff;    
     font-family: "Lato", sans-serif;
     outline: none;
     border: none;

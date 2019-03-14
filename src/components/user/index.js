@@ -41,8 +41,8 @@ class User extends Component {
     const username = localStorage.getItem("@cdm:user");
     
     return (
-      <Container>          
-       
+      <Container>      
+      
 
   <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="btn"  >
         <DropdownToggle caret color="transparent" className="btn">

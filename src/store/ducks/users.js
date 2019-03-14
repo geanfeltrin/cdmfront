@@ -9,7 +9,9 @@ const { Types, Creators } = createActions({
   openUsersModal: null,
   closeUsersModal: null,
   createUsersRequest: ["username", "email", "password", "roles"],
-  createUsersSuccess: ["users"]
+  createUsersSuccess: ["users"],
+  changePasswordRequest: ["id","password"],
+  changePasswordSuccess: ["change"]
 });
 
 export const UsersTypes = Types;
@@ -19,7 +21,8 @@ export default Creators;
 
 export const INITIAL_STATE = Immutable({
   data: [],
-  UsersModalOpen: false
+  UsersModalOpen: false,
+  change: []
 });
 
 /* Reducers */
@@ -32,11 +35,13 @@ export const closeModal = state => state.merge({ UsersModalOpen: false });
 
 export const createSuccess = (state, { users }) =>
   state.merge({ data: [...state.data, users] });
-/* Reducers to types */
 
+export const changePasswordSuccess = (state, {change}) => state.merge({change})
+  /* Reducers to types */
 export const reducer = createReducer(INITIAL_STATE, {
   [Types.GET_USERS_SUCCESS]: success,
   [Types.OPEN_USERS_MODAL]: openModal,
   [Types.CLOSE_USERS_MODAL]: closeModal,
-  [Types.CREATE_USERS_SUCCESS]: createSuccess
+  [Types.CREATE_USERS_SUCCESS]: createSuccess,
+  [Types.CHANGE_PASSWORD_SUCCESS]: changePasswordSuccess
 });

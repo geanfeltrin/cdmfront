@@ -20,13 +20,15 @@ export const INITIAL_STATE = Immutable({
   permission: localStorage.getItem("@cdm:permission") || null,
   signedIn: !!localStorage.getItem("@cdm:token"),
   token: localStorage.getItem("@cdm:token") || null,
-  user: localStorage.getItem("@cdm:user") || null
+  user: [] 
 });
 
 /* Reducers */
 
-export const success = (state, { token, user }) => {
-  return state.merge({ signedIn: true, token , user });
+export const success = (state, { token }) => {    
+  const t = token.token 
+ 
+  return state.merge({ signedIn: true, token: t });
 };
 export const logout = state =>
   state.merge({ signOut: false, token: null, user: null });
