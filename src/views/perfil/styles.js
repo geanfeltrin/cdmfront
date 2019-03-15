@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import device from "../../styles/devices";
 import media from "styled-media-query";
 
@@ -182,10 +182,32 @@ span{
     &:hover {
       background-color: #016f80;
     }
-
+    &:disabled{
+      background-color: gray;
+      text-decoration-line: line-through;  
+    }
+   
     ${device.mobileS`
     width: 85%;
     `}
+  }
+
+  .btn-show{
+    margin-left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background:  #ffffff;
+    color: #000;
+    -webkit-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    -moz-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    &:hover {
+      background-color:  #ffffff;
+    }
+    &:active{
+      background-color: #ffffff;
+      outline: 
+    }
   }
 
   a {
