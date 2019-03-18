@@ -33,12 +33,12 @@ export function* createUsers({ username, email, password, roles }) {
 }
 
 export function* changePassword ({id, password}){
-  console.log('id' , id)
+  
   try{
     const response = yield call(api.put, `users/${id}`, {
       password      
     })
-    console.log(response)
+    
     yield put(UsersAction.changePasswordSuccess(response.data));
     // yield put(push("/"))
     yield put(
