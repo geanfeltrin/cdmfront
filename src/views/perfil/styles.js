@@ -193,20 +193,18 @@ span{
   }
 
   .btn-show{
-    margin-left: 0;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    background:  #ffffff;
-    color: #000;
-    -webkit-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
-    -moz-box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
-    box-shadow: 6px 3px 6px 1px rgba(230, 230, 230, 1);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 30px;
+    margin-left: 8px;
+    outline: none;
     &:hover {
       background-color:  #ffffff;
     }
     &:active{
       background-color: #ffffff;
-      outline: 
+      outline: none;      
     }
   }
 

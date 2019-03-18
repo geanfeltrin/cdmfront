@@ -10,8 +10,9 @@ import { bindActionCreators } from "redux";
 
 import UsersActions from "../../store/ducks/users"
 
+import {IoEye, IoEyeDisabled} from 'react-icons/lib/io'
 
-import IoEye  from "react-icons/lib/io/eye"
+
 
 import PropTypes from "prop-types";
 
@@ -22,8 +23,7 @@ class Perfil extends Component {
   };
 
   state={
-    newPass: "",
-    confirmPass: "",
+    newPass: "",   
     user: "",
     type: "password",
     wording: "Show"
@@ -46,9 +46,8 @@ class Perfil extends Component {
  
   handleClean= () => {
     this.setState({
-      newPass: "",
-      confirmPass: ""
-    })
+      newPass: ""
+          })
   }
   async componentDidMount() {
     const response = await api.get("users/show");
@@ -56,7 +55,7 @@ class Perfil extends Component {
   }
 
   changeType = () =>{
-    const {wording, type} = this.state
+    const {wording} = this.state
     if(wording === "Show"){
       this.setState({
         wording: "Hide",
@@ -89,25 +88,16 @@ class Perfil extends Component {
               name="newPass"
               value={newPass}
               onChange={this.handleInputChange}
-              placeholder="Nova Senha"
-            />
-            <button type="button" className="btn-show" onClick={this.changeType}><IoEye/>{wording}</button>      
-         
-          </div>
-        
-          
-            {/* <input
-              type="password"
-              name="confirmPass"
-              value={confirmPass}
-              onChange={this.handleInputChange}
-              placeholder="Confirme a Senha"
-            />          */}
-
-          <button type="submit" disabled={!newPass}>Confirmar</button>
+              placeholder="Nova Senha"            />
+          <div>          
+          <button type="button" className="btn-show" onClick={this.changeType}>{wording === "Show" ? <IoEye size={30} color="black"  /> : <IoEyeDisabled size={30} color="black"  />  }</button>
+          </div>       
+          </div>     
+           <button type="submit" disabled={!newPass}>Confirmar</button>
        
         </Form>
         </div>
+       
         </Container>
         <Footer />
       </Wrapper>
