@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Footer from "../../components/footer";
-import Header from "../../components/heade2";
+import Header from "../../components/header";
 
 import api from '../../services/api'
 import { Container, Wrapper, Form } from "./styles";

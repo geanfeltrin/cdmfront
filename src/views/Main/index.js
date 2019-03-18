@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Footer from "../../components/footer";
-import Header from "../../components/heade2";
+import Header from "../../components/header";
 // import Search from "../../components/search";
 import SideBar from "../../components/sidebar";
 import Cards from "../../components/cards";
