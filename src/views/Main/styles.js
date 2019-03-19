@@ -15,52 +15,48 @@ export const Container = styled.div`
   margin-top: 60px;
   margin-bottom: 30px;
   overflow-y: none !important;
-  overflow-x: none !important;
-
-  ${device.mobileS`
-  align-content: center;
-  justify-content: center;
-  margin-left: 1em;
-  margin-top: 1em;
-  `}
+  overflow-x: none !important;  
   ${device.phone`
   align-content: center;
   justify-content: center;
   margin: 0 auto;
   margin-top: 1em;
-  `}
+  `} 
   > div {
     width: 100%;
   }
   .divider {
     border-top: 5px solid #e7e7e7;
   }
-
-  ${device.mobileL`
-  margin-right: 0px;
   
-  `}
   .min-height {
     min-height: 420px;
     overflow-x: none !important;
-
-  ${media.lessThan("374px")`
-    margin-left: -1em !important;
+ 
+  ${media.lessThan("500px")`
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    
   `}
-  ${media.between("374px", "424px")`
-  margin-left: 0em !important;
+ 
+  ${media.between("500px", "780px")`
+  justify-content: center;
+  margin-left: 0px !important;
+    margin-right: 0px !important;
   `}
-
-  ${media.between("424px", "450px")`
-  margin-left: 1.5em !important;
+  .row{
+    ${media.lessThan("500px")`
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  `}  
+  }
+    .col-sm-10{
+    ${media.lessThan("500px")`
+    padding-left: 0px !important;
+    padding-right: 0px !important;  
+    
   `}
-  ${media.between("424px", "450px")`
-  margin-left: 1.5em !important;
-  `}
-  ${media.greaterThan("2000px")`
-  min-height: 1530px;
-  `}
-  
+  }
   }
 `;
 

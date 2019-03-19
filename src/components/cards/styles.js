@@ -13,19 +13,17 @@ export const Container = styled.div`
   width: 100%;
   ${device.phone`
   align-content: center;
-  justify-content: center;
-  margin-left: 1.5em;
+  justify-content: center;  
   margin-right: 0px;
   `}
   ${device.mobileS`
   align-content: center;
   justify-content: center;
-  margin-left: 1em;
+  
   `}
   ${device.mobileM`
   align-content: center;
-  justify-content: center;
-  margin-left: 1em;
+  justify-content: center;  
   margin-right: 0px;
   `} 
 
@@ -153,6 +151,31 @@ export const Container = styled.div`
     margin-bottom: 20px;
     color: #000000;
     overflow-x: hidden;
+
+    h1{
+      margin-left: 0px;
+      ${media.lessThan("321px")`
+      padding-left: 20px;   
+      `}
+      ${media.lessThan("376px")`
+      padding-left: 45px;   
+      `}
+      ${media.lessThan("426px")`
+      padding-left: 75px; 
+      `}
+      
+    }
+    strong{
+      ${media.lessThan("321px")`
+      padding-left: 5px;
+      `}
+      ${media.lessThan("376px")`
+      padding-left: 30px;   
+      `}
+      ${media.lessThan("426px")`
+        padding-left: 60px; 
+      `}
+    }
   }
 
   .block-with-text {
@@ -165,6 +188,12 @@ export const Container = styled.div`
       width: auto;
       white-space: normal;
     }
+  }
+
+  .full-width{    
+    ${media.lessThan("500px")`
+    justify-content: center;
+  `} 
   }
 `;
 

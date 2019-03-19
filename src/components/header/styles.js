@@ -9,10 +9,9 @@ export const Container = styled.div`
     width: 100px;
   }
 
-  ${media.lessThan("374px")`
-  padding-left: 0px ;
+  ${media.lessThan("500px")`
+  padding-left: 0px;
   padding-right: 0px;
   `}
-  .Navbar {
-  }
+  
 `;
