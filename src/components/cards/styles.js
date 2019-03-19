@@ -157,10 +157,10 @@ export const Container = styled.div`
       ${media.lessThan("321px")`
       padding-left: 20px;   
       `}
-      ${media.lessThan("376px")`
+      ${media.between("322px" , "376px")`
       padding-left: 45px;   
       `}
-      ${media.lessThan("426px")`
+      ${media.between("377px" , "426px")`
       padding-left: 75px; 
       `}
       
@@ -169,10 +169,10 @@ export const Container = styled.div`
       ${media.lessThan("321px")`
       padding-left: 5px;
       `}
-      ${media.lessThan("376px")`
+      ${media.between("322px" , "376px")`
       padding-left: 30px;   
       `}
-      ${media.lessThan("426px")`
+      ${media.between("377px" , "426px")`
         padding-left: 60px; 
       `}
     }
