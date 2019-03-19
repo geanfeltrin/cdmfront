@@ -50,6 +50,11 @@ export const Container = styled.aside`
       border-bottom: 1px solid #e7e7e7;
     }
   }
+  .side-box{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   strong {
     font-family: "Lato";
     font-style: normal;

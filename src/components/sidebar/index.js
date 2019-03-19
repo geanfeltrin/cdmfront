@@ -31,7 +31,7 @@ class SideBar extends Component {
     if (!activeCategory) return null;
     return (
       <Container>
-        <div>
+        <div className="side-box">
           <h1>Categorias</h1>
           {category.data.map(category =>
             category.subCategories.map(subCategories => {
