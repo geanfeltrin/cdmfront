@@ -35,8 +35,7 @@ export const Container = styled.div`
  
   ${media.lessThan("500px")`
     margin-left: 0px !important;
-    margin-right: 0px !important;
-    
+    margin-right: 0px !important;    
   `}
  
   ${media.between("500px", "780px")`
