@@ -157,10 +157,10 @@ export const Container = styled.div`
       ${media.lessThan("321px")`
       padding-left: 20px;   
       `}
-      ${media.between("322px" , "376px")`
+      ${media.between("322px", "376px")`
       padding-left: 45px;   
       `}
-      ${media.between("377px" , "426px")`
+      ${media.between("377px", "426px")`
       padding-left: 75px; 
       `}
       
@@ -169,10 +169,10 @@ export const Container = styled.div`
       ${media.lessThan("321px")`
       padding-left: 5px;
       `}
-      ${media.between("322px" , "376px")`
+      ${media.between("322px", "376px")`
       padding-left: 30px;   
       `}
-      ${media.between("377px" , "426px")`
+      ${media.between("377px", "426px")`
         padding-left: 60px; 
       `}
     }
@@ -194,6 +194,28 @@ export const Container = styled.div`
     ${media.lessThan("500px")`
     justify-content: center;
   `} 
+  }
+  .show-more {
+    background: #ffffff !important;
+    border: gray 1px solid !important;
+    color: gray !important;
+    width: 270px;   
+
+    &:hover{
+      background: gray !important;
+      color: #ffffff !important;
+    }
+    &:focus{
+      background: #ffffff !important;
+    border: gray 1px solid !important;
+    }
+  }
+  .box-show-more{
+    ${media.between("320px", "425px")`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `}
   }
 `;
 

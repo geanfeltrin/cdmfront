@@ -17,6 +17,10 @@ import {
 } from "reactstrap";
 
 class cards extends Component {
+  state = {
+    loadMore: false,
+    loadCount: 8
+  };
   static propTypes = {
     getPostRequest: PropTypes.func.isRequired,
     activeCategory: PropTypes.shape({
@@ -28,12 +32,18 @@ class cards extends Component {
     const { getPostRequest, activeCategory } = this.props;
 
     if (activeCategory) {
-      getPostRequest();
+      const id = activeCategory.id;
+      getPostRequest(id);
     }
   }
+
+  showMore = () => {
+    this.setState({ loadCount: this.state.loadCount + 4 });
+  };
+
   render() {
     const { activeCategory, post } = this.props;
-  
+    const { loadCount } = this.state;
 
     if (!activeCategory)
       return (
@@ -78,43 +88,59 @@ class cards extends Component {
         </Row>
 
         <Row className="full-width">
-          {post.data.map(post => {
-            if (post.subcategories.id === activeCategory.id) {
-              return (
-                <Col key={post.id} sm="2" className="cards-body">
-                  <Card key={post.id}>
-                    {post.file_id === null ? (
-                      <CardImg
-                        src={imgDefault}
-                        width="100%"
-                        alt={post.title}
-                        className="cards-body-img"
-                      />
-                    ) : (
-                      <CardImg
-                        src={post.file.url}
-                        width="100%"
-                        alt={post.title}
-                        className="cards-body-img"
-                      />
-                    )}
+          {post.data &&
+            post.data.slice(0, loadCount).map(post => {
+              if (post.subcategories.id === activeCategory.id) {
+                return (
+                  <Col key={post.id} sm="2" className="cards-body">
+                    <Card key={post.id}>
+                      {post.file_id === null ? (
+                        <CardImg
+                          src={imgDefault}
+                          width="100%"
+                          alt={post.title}
+                          className="cards-body-img"
+                        />
+                      ) : (
+                        <CardImg
+                          src={post.file.url}
+                          width="100%"
+                          alt={post.title}
+                          className="cards-body-img"
+                        />
+                      )}
 
-                    <CardBody className="cards-body-content">
-                      <CardTitle>{post.title}</CardTitle>
-                      <CardText expand="true">{post.description}</CardText>
-                      <Button
-                        className="float-right text-uppercase bnt-download"
-                        href={post.url}
-                      >
-                        Baixar
-                      </Button>
-                    </CardBody>
-                  </Card>
-                </Col>
-              );
-            } else return null;
-          })}
+                      <CardBody className="cards-body-content">
+                        <CardTitle>{post.title}</CardTitle>
+                        <CardText expand="true">{post.description}</CardText>
+                        <Button
+                          className="float-right text-uppercase bnt-download"
+                          href={post.url}
+                        >
+                          Baixar
+                        </Button>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                );
+              } else return null;
+            })}
+          {console.log(post.data)}
         </Row>
+        <Col className="p-0">
+          {post.data.length > 5 && (
+            <div className="box-show-more">
+              <p>
+                <a
+                  className="btn btn-primary show-more"
+                  onClick={() => this.showMore()}
+                >
+                  Ver mais
+                </a>
+              </p>
+            </div>
+          )}
+        </Col>
       </Container>
     );
   }

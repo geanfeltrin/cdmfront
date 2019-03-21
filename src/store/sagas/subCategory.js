@@ -20,7 +20,6 @@ export function* createSubCategory({ name, category_id }) {
     yield put(SubCategoryAction.createSubCategorySuccess(response.data));
     yield put(SubCategoryAction.closeModal());
     yield put(push("/admin"));
-    console.log("foi");
   } catch (error) {
     yield put(
       toastrActions.add({
