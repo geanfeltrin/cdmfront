@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -15,6 +15,8 @@ import {
   Row,
   Col
 } from "reactstrap";
+
+import Featured from "../Featured";
 
 class cards extends Component {
   state = {
@@ -47,35 +49,14 @@ class cards extends Component {
 
     if (!activeCategory)
       return (
-        <Content>
-          <h1 className="txt-welcome">Seja Bem-vindo</h1>
-
-          <Col>
-            <h1 className="txt-center">Campanha Mês das Mulheres</h1>
-            <Row>
-              <Col className="m-3">
-                <img
-                  className="img-fluid mx-auto d-block"
-                  src="http://cdm.escolatecnicaresidencia.com.br/api/files/5"
-                  width="500px"
-                  height="400px"
-                  alt="campanha mulheres"
-                />
-              </Col>
-            </Row>
-            <Row className="text-center">
-              <Col className="m-3 mx-auto d-block">
-                <Button
-                  className="btn btn-success"
-                  href="https://www.dropbox.com/sh/gcxfryx10kxn93v/AAB6scCEc4fLqZAyhrywy69wa?dl=1"
-                >
-                  Fazer Download
-                </Button>
-              </Col>
-            </Row>
-          </Col>
-        </Content>
+        <Fragment>
+          <Content>
+            <h1 className="txt-welcome">Seja Bem-vindo</h1>
+          </Content>
+          <Featured />
+        </Fragment>
       );
+
     return (
       <Container>
         <Row className="title">
