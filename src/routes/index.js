@@ -14,8 +14,7 @@ import Guest from "./guest";
 
 import Main from "../views/Main";
 import SignIn from "../views/SignIn";
-import Perfil from "../views/perfil";
-
+import Perfil from "../views/Perfil";
 
 const Routes = () => (
   <ConnectedRouter history={history}>
@@ -23,7 +22,6 @@ const Routes = () => (
       <Guest path="/signin" component={SignIn} />
       <Private path="/" exact component={Main} />
       <Private path="/perfil" component={Perfil} />
-      
     </Switch>
   </ConnectedRouter>
 );

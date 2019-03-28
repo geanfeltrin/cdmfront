@@ -12,7 +12,7 @@ export default class Featured extends Component {
   };
 
   async componentDidMount() {
-    const response = await api.get("filter");
+    const response = await api.get("post");
     this.setState({ featured: response.data });
   }
   render() {
