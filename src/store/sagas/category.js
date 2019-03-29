@@ -8,9 +8,7 @@ export function* getCategory() {
     const response = yield call(api.get, "category");
 
     yield put(CategoryAction.getCategorySuccess(response.data));
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 }
 
 export function* createCategory({ name }) {

@@ -47,16 +47,6 @@ class cards extends Component {
     const { activeCategory, post } = this.props;
     const { loadCount } = this.state;
 
-    if (!activeCategory)
-      return (
-        <Fragment>
-          <Content>
-            <h1 className="txt-welcome">Seja Bem-vindo</h1>
-          </Content>
-          <Featured />
-        </Fragment>
-      );
-
     return (
       <Container>
         <Row className="title">
