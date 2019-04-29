@@ -65,16 +65,16 @@ class cards extends Component {
                 return (
                   <Col key={post.id} sm="2" className="cards-body">
                     <Card key={post.id}>
-                      {post.file_id === null ? (
+                      {post.thumbnail_id === null ? (
                         <CardImg
-                          src={imgDefault}
+                          src={post.file_id ? post.file.url : imgDefault}
                           width="100%"
                           alt={post.title}
                           className="cards-body-img"
                         />
                       ) : (
                         <CardImg
-                          src={post.file.url}
+                          src={post.DropboxThumbnail.url}
                           width="100%"
                           alt={post.title}
                           className="cards-body-img"
@@ -84,12 +84,25 @@ class cards extends Component {
                       <CardBody className="cards-body-content">
                         <CardTitle>{post.title}</CardTitle>
                         <CardText expand="true">{post.description}</CardText>
-                        <Button
-                          className="float-right text-uppercase bnt-download"
-                          href={post.url}
-                        >
-                          Baixar
-                        </Button>
+                        {post.download_id ? (
+                          <Button
+                            className="float-right text-uppercase bnt-download"
+                            href={
+                              post.DropboxDownload.url === null
+                                ? post.url
+                                : post.DropboxDownload.url
+                            }
+                          >
+                            Baixar
+                          </Button>
+                        ) : (
+                          <Button
+                            className="float-right text-uppercase bnt-download"
+                            href={post.url}
+                          >
+                            Baixar
+                          </Button>
+                        )}
                       </CardBody>
                     </Card>
                   </Col>
