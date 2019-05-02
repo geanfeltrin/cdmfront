@@ -27,19 +27,30 @@ export default class Featured extends Component {
                 <Col key={post.id}>
                   <h1 className="txt-center">{post.title}</h1>
                   <Row>
-                    <Col className="m-3">
-                      <img
-                        className="img-fluid mx-auto d-block"
-                        src={post.file.url}
-                        width="500px"
-                        height="400px"
-                        alt="campanha mulheres"
-                      />
-                    </Col>
+                    {post.file_id && (
+                      <Col className="m-3">
+                        <img
+                          className="img-fluid mx-auto d-block"
+                          src={
+                            post.file_id
+                              ? post.file.url
+                              : post.dropboxThumbnail.url
+                          }
+                          width="500px"
+                          height="400px"
+                          alt="campanha mulheres"
+                        />
+                      </Col>
+                    )}
                   </Row>
                   <Row className="text-center">
                     <Col className="m-3 mx-auto d-block">
-                      <Button className="btn btn-success" href={post.url}>
+                      <Button
+                        className="btn btn-success"
+                        href={
+                          post.download_id ? post.dropboxDownload.url : post.url
+                        }
+                      >
                         Fazer Download
                       </Button>
                     </Col>

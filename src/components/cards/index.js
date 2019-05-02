@@ -34,7 +34,8 @@ class cards extends Component {
     const { getPostRequest, activeCategory } = this.props;
 
     if (activeCategory) {
-      const id = activeCategory.id;
+      const { id } = activeCategory;
+      console.log(id);
       getPostRequest(id);
     }
   }
@@ -74,7 +75,7 @@ class cards extends Component {
                         />
                       ) : (
                         <CardImg
-                          src={post.DropboxThumbnail.url}
+                          src={post.dropboxThumbnail.url}
                           width="100%"
                           alt={post.title}
                           className="cards-body-img"
@@ -88,9 +89,9 @@ class cards extends Component {
                           <Button
                             className="float-right text-uppercase bnt-download"
                             href={
-                              post.DropboxDownload.url === null
+                              post.dropboxDownload.url === null
                                 ? post.url
-                                : post.DropboxDownload.url
+                                : post.dropboxDownload.url
                             }
                           >
                             Baixar
@@ -116,6 +117,7 @@ class cards extends Component {
             <div className="box-show-more">
               <p>
                 <a
+                  href
                   className="btn btn-primary show-more"
                   onClick={() => this.showMore()}
                 >
