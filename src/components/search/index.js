@@ -1,16 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Container } from "./styles";
 
-export default class Search extends Component {
-  render() {
-    return (
-      <Container>
-        <input type="text" placeholder="Faça aqui sua pesquisa" />
-        <button type="submit">
-          <span>Pesquisar</span>
-        </button>
-      </Container>
-    );
-  }
-}
+const search = ({ name, title, onSearch, handleInputChange }) => (
+  <Container>
+    <input
+      type="text"
+      placeholder="Faça aqui sua pesquisa"
+      onChange={handleInputChange}
+      name={name}
+      value={title}
+    />
+    <button type="button" onClick={onSearch}>
+      <span>Pesquisar</span>
+    </button>
+  </Container>
+);
+
+export default search;

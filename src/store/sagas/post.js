@@ -3,8 +3,12 @@ import api from "../../services/api";
 
 import PostAction from "../ducks/post";
 
-export function* getPost({ id }) {
-  const response = yield call(api.get, `filter/${id}`);
+export function* getPost({ id, title }) {
+  let search = "&title";
+  if (title) {
+    search = `&title=${title}`;
+  }
+  const response = yield call(api.get, `filtercategory?id=${id}${search}`);
 
   yield put(PostAction.getPostSuccess(response.data));
 }

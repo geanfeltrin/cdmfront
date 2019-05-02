@@ -16,12 +16,15 @@ import {
   Col
 } from "reactstrap";
 
+import Search from "../search";
+
 import Featured from "../Featured";
 
 class cards extends Component {
   state = {
     loadMore: false,
-    loadCount: 8
+    loadCount: 8,
+    title: ""
   };
   static propTypes = {
     getPostRequest: PropTypes.func.isRequired,
@@ -44,12 +47,31 @@ class cards extends Component {
     this.setState({ loadCount: this.state.loadCount + 4 });
   };
 
+  onSearch = title => {
+    const { getPostRequest } = this.props;
+    console.log("t", title);
+    getPostRequest("", title);
+  };
+
+  handleInputChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
     const { activeCategory, post } = this.props;
-    const { loadCount } = this.state;
+    const { loadCount, title } = this.state;
 
     return (
       <Container>
+        <div>
+          <Search
+            handleInputChange={this.handleInputChange}
+            name="title"
+            title={this.state.title}
+            onSearch={() => this.onSearch(title)}
+          />
+        </div>
+
         <Row className="title">
           <Col sm={10}>
             <h1>{activeCategory.categoryName}</h1>
@@ -58,7 +80,6 @@ class cards extends Component {
             <strong>{activeCategory.name}</strong>
           </Col>
         </Row>
-
         <Row className="full-width">
           {post.data &&
             post.data.slice(0, loadCount).map(post => {
@@ -108,16 +129,59 @@ class cards extends Component {
                     </Card>
                   </Col>
                 );
-              } else return null;
+              } else
+                return (
+                  <Col key={post.id} sm="2" className="cards-body">
+                    <Card key={post.id}>
+                      {post.thumbnail_id === null ? (
+                        <CardImg
+                          src={post.file_id ? post.file.url : imgDefault}
+                          width="100%"
+                          alt={post.title}
+                          className="cards-body-img"
+                        />
+                      ) : (
+                        <CardImg
+                          src={post.dropboxThumbnail.url}
+                          width="100%"
+                          alt={post.title}
+                          className="cards-body-img"
+                        />
+                      )}
+
+                      <CardBody className="cards-body-content">
+                        <CardTitle>{post.title}</CardTitle>
+                        <CardText expand="true">{post.description}</CardText>
+                        {post.download_id ? (
+                          <Button
+                            className="float-right text-uppercase bnt-download"
+                            href={
+                              post.dropboxDownload.url === null
+                                ? post.url
+                                : post.dropboxDownload.url
+                            }
+                          >
+                            Baixar
+                          </Button>
+                        ) : (
+                          <Button
+                            className="float-right text-uppercase bnt-download"
+                            href={post.url}
+                          >
+                            Baixar
+                          </Button>
+                        )}
+                      </CardBody>
+                    </Card>
+                  </Col>
+                );
             })}
-          {console.log(post.data)}
         </Row>
         <Col className="p-0">
           {post.data.length > 5 && (
             <div className="box-show-more">
               <p>
                 <a
-                  href
                   className="btn btn-primary show-more"
                   onClick={() => this.showMore()}
                 >
