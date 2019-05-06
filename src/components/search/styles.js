@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  margin: 20px 50px;
   margin-bottom: 50px;
-  justify-content: center;
 
   input {
     height: 50px;
-    width: 50%;
+    width: 30%;
     padding: 10px;
     background: #ffffff;
     border: 1px solid #e7e7e7;
@@ -16,7 +14,7 @@ export const Container = styled.div`
     border-radius: 5px;
     font-family: "Lato", sans-serif;
     &::-webkit-input-placeholder {
-      color: #a2a2a2;
+      color: #aaaaaa;
     }
   }
 

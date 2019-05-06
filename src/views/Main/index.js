@@ -23,7 +23,9 @@ export default class Main extends Component {
               </Col>
             </Row>
           ) : (
-            <Featured />
+            <div>
+              <Featured />
+            </div>
           )}
         </Container>
         <Footer />
