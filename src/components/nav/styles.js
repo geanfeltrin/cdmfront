@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: transparent;
-
+  .height {
+    height: 60px !important;
+  }
+  nav {
+    height: 60px !important;
+  }
   li {
     list-style-type: none !important;
   }

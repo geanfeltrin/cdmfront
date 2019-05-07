@@ -16,7 +16,7 @@ export const Container = styled.div`
   margin-bottom: 30px;
   overflow-y: none !important;
   overflow-x: none !important;  
-  ${device.phone`
+  /* ${device.phone`
   align-content: center;
   justify-content: center;
   margin: 0 auto;
@@ -56,7 +56,7 @@ export const Container = styled.div`
     
   `}
   }
-  }
+  } */
 `;
 
 export const Content = styled.div`

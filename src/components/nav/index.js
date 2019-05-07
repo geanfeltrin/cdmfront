@@ -64,7 +64,7 @@ class nav extends Component {
 
     return (
       <Container>
-        <Navbar color="white" light expand="md">
+        <Navbar color="white" light expand="md" className="height">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar />

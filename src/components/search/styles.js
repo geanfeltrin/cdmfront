@@ -18,6 +18,7 @@ export const Container = styled.div`
     }
   }
 
+  /* 
   button {
     height: 50px;
     padding: 0px 30px;
@@ -26,6 +27,13 @@ export const Container = styled.div`
     border: none;
     border-radius: 0px 5px 5px 0px;
     font-family: "Lato", sans-serif;
+    &:hover {
+      background: #337c8c;
+    }
+  } */
+
+  .btn {
+    background: #3c8d9f;
     &:hover {
       background: #337c8c;
     }
