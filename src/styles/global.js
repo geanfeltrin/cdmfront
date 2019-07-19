@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import "react-redux-toastr/lib/css/react-redux-toastr.min.css";
+import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 html,body, #root{
     height:100%;
     margin: 0 auto;
+    
 }
 
 body{
