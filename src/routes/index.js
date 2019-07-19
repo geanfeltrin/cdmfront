@@ -14,7 +14,7 @@ import Guest from "./guest";
 
 import Main from "../views/Main";
 import SignIn from "../views/SignIn";
-import Perfil from "../views/Perfil";
+import Perfil from '../views/Perfil'
 
 const Routes = () => (
   <ConnectedRouter history={history}>
