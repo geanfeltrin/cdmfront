@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "admin-lte": "2.3.6",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap": "^4.2.1",
     "connected-react-router": "^6.2.2",
     "font-awesome": "4.7.0",
